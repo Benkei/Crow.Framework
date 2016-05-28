@@ -1,0 +1,3 @@
+[submodule "Tools/SharpSpecGen"]
+	path = Tools/SharpSpecGen
+	url = https://github.com/Benkei/SharpSpecGen.git

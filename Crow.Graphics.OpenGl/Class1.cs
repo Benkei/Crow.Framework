@@ -6,9 +6,36 @@ using System.Text;
 
 namespace Crow.Graphics.OpenGl
 {
-	public class Class1
+	public static class Class1
 	{
+		static class MyClass
+		{
+			public unsafe static void Muh(data<int, float, double> daaten, dataMuh da, Huhu num)
+			{
+				Huhu* og = &num;
+			}
+			[MethodImpl ( MethodImplOptions.ForwardRef )]
+			public static extern int XXX(int number);
+		}
+
 		[MethodImpl(MethodImplOptions.ForwardRef)]
-		public extern int Square(int number);
+		public static extern int Square(int number);
+	}
+
+	public class dataMuh
+	{
+
+	}
+	public struct data<T>
+	{
+
+	}
+	public struct data<T1, T2, T3>
+	{
+
+	}
+	public struct Huhu
+	{
+
 	}
 }
