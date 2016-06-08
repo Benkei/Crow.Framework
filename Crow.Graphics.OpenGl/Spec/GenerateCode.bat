@@ -1,0 +1,1 @@
+"../../Tools/SharpSpecGen.exe" "gl.xml" "gl_mapping.xml" "gl" "core" "4.5" "../Gen"

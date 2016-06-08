@@ -3,7 +3,7 @@
 	.class nested private abstract sealed MyClass
 		extends [mscorlib]System.Object
 	{
-		.method public static void XXX (valuetype Crow.Graphics.data`1<int32> number) cil managed 
+		.method public static void XXX (valuetype Crow.Graphics.OpenGl.data`1<int32> number) cil managed 
 		{
 			ret
 		}

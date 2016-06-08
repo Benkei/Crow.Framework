@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crow.Graphics.OpenGl", "Crow.Graphics.OpenGl\Crow.Graphics.OpenGl.csproj", "{B992B651-F5AA-4105-9495-494E770C3010}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSpecGen", "Tools\SharpSpecGen\SharpSpecGen.csproj", "{AD8D338D-2247-4C90-ADFA-80A7F1C79529}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{50743143-2A34-45C3-8016-3B01B3C9A310}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{B992B651-F5AA-4105-9495-494E770C3010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B992B651-F5AA-4105-9495-494E770C3010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B992B651-F5AA-4105-9495-494E770C3010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD8D338D-2247-4C90-ADFA-80A7F1C79529} = {50743143-2A34-45C3-8016-3B01B3C9A310}
 	EndGlobalSection
 EndGlobal
