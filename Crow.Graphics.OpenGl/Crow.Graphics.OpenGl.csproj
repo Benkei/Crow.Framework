@@ -35,15 +35,40 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class1.il" />
+    <Compile Include="Gen\BlendEquationModeEXT.cs" />
+    <Compile Include="Gen\BlendingFactorDest.cs" />
+    <Compile Include="Gen\BlendingFactorSrc.cs" />
+    <Compile Include="Gen\Boolean.cs" />
+    <Compile Include="Gen\ClearBufferMask.cs" />
+    <Compile Include="Gen\ClientAttribMask.cs" />
+    <Compile Include="Gen\ColorPointerType.cs" />
+    <Compile Include="Gen\ColorTableParameterPNameSGI.cs" />
+    <Compile Include="Gen\ColorTableTargetSGI.cs" />
+    <Compile Include="Gen\ConvolutionParameterEXT.cs" />
+    <Compile Include="Gen\ConvolutionTargetEXT.cs" />
+    <Compile Include="Gen\CullFaceMode.cs" />
+    <Compile Include="Gen\DepthFunction.cs" />
+    <Compile Include="Gen\DrawBufferMode.cs" />
+    <Compile Include="Gen\EnableCap.cs" />
+    <Compile Include="Gen\ErrorCode.cs" />
+    <Compile Include="Gen\FfdMaskSGIX.cs" />
+    <Compile Include="Gen\FfdTargetSGIX.cs" />
+    <Compile Include="Gen\FogCoordinatePointerType.cs" />
+    <Compile Include="Gen\FogPointerTypeEXT.cs" />
+    <Compile Include="Gen\FogPointerTypeIBM.cs" />
+    <Compile Include="Gen\FragmentLightModelParameterSGIX.cs" />
+    <Compile Include="Gen\FrontFaceDirection.cs" />
+    <Compile Include="Gen\GetColorTableParameterPNameSGI.cs" />
+    <Compile Include="Gen\GetHistogramParameterPNameEXT.cs" />
+    <Compile Include="Gen\GetMinmaxParameterPNameEXT.cs" />
+    <Compile Include="Gen\GetPName.cs" />
+    <Compile Include="Gen\GetPointervPName.cs" />
+    <Compile Include="Gen\GetTextureParameter.cs" />
     <Compile Include="Gen\Gl.3dfx.Multisample.cs" />
     <Compile Include="Gen\Gl.3dfx.Tbuffer.cs" />
     <Compile Include="Gen\Gl.3dfx.TextureCompressionFxt1.cs" />
@@ -424,10 +449,55 @@
     <Compile Include="Gen\Gl.Sunx.ConstantData.cs" />
     <Compile Include="Gen\Gl.Win.PhongShading.cs" />
     <Compile Include="Gen\Gl.Win.SpecularFog.cs" />
+    <Compile Include="Gen\HintMode.cs" />
+    <Compile Include="Gen\HintTarget.cs" />
+    <Compile Include="Gen\HistogramTargetEXT.cs" />
+    <Compile Include="Gen\IndexPointerType.cs" />
+    <Compile Include="Gen\LightEnvParameterSGIX.cs" />
+    <Compile Include="Gen\LightName.cs" />
+    <Compile Include="Gen\LightParameter.cs" />
+    <Compile Include="Gen\ListParameterName.cs" />
+    <Compile Include="Gen\LogicOp.cs" />
+    <Compile Include="Gen\MaterialFace.cs" />
+    <Compile Include="Gen\MaterialParameter.cs" />
+    <Compile Include="Gen\MatrixMode.cs" />
+    <Compile Include="Gen\MinmaxTargetEXT.cs" />
+    <Compile Include="Gen\NormalPointerType.cs" />
+    <Compile Include="Gen\OcclusionQueryEventMaskAMD.cs" />
+    <Compile Include="Gen\PixelFormat.cs" />
+    <Compile Include="Gen\PixelStoreParameter.cs" />
+    <Compile Include="Gen\PixelTexGenParameterNameSGIS.cs" />
+    <Compile Include="Gen\PixelType.cs" />
+    <Compile Include="Gen\PolygonMode.cs" />
+    <Compile Include="Gen\PrimitiveType.cs" />
+    <Compile Include="Gen\ReadBufferMode.cs" />
+    <Compile Include="Gen\SamplePatternSGIS.cs" />
+    <Compile Include="Gen\SeparableTargetEXT.cs" />
+    <Compile Include="Gen\StencilFaceDirection.cs" />
+    <Compile Include="Gen\StencilFunction.cs" />
+    <Compile Include="Gen\StencilOp.cs" />
+    <Compile Include="Gen\StringName.cs" />
+    <Compile Include="Gen\TexCoordPointerType.cs" />
+    <Compile Include="Gen\TextureCoordName.cs" />
+    <Compile Include="Gen\TextureEnvParameter.cs" />
+    <Compile Include="Gen\TextureEnvTarget.cs" />
+    <Compile Include="Gen\TextureGenParameter.cs" />
+    <Compile Include="Gen\TextureParameterName.cs" />
+    <Compile Include="Gen\TextureTarget.cs" />
+    <Compile Include="Gen\TextureUnit.cs" />
+    <Compile Include="Gen\VertexPointerType.cs" />
     <Compile Include="Interop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Spec\egl.xml" />
+    <Content Include="Spec\gl.xml" />
+    <Content Include="Spec\gl_mapping.xml" />
+    <Content Include="Spec\wgl.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec\GenerateCode.bat" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <CompileDependsOn>
@@ -437,6 +507,10 @@
       CoreDecompile;
       CoreCompileIL;
     </CompileDependsOn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <Target Name="HideILFromCompile">
     <ItemGroup>

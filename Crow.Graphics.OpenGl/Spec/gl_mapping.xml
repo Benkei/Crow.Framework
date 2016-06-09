@@ -19,6 +19,7 @@
       target="(glBlendEquation.*|glBlendFunc.*|glClearBuffer|glClearDepth|glClearNamedFramebuffer|glDepthRangeArray|glDepthRange|glDisable|glEnable|glGetActiveAtomicCounterBuffer|glGetActiveSubroutineUniform|glGetActiveUniformBlock|glGetActiveUniforms|glGetBoolean|glGetBufferPointer|glGetDouble|glGetFloat|GetInteger64|glGetInteger|glGetInternalformat|glGetMultisample|glGetNamedBufferPointer|glGetnUniform|.*ColorMask|.*Program|.*Parameter|.*Interface|.*Pipeline|.*Resource|.*Stage|.*Object|.*Indexed|.*Query|.*ParameterI|.*Shader|.*String|.*Sync|.*Feedback|.*Uniform|.*Subroutine|.*Subroutines|.*Array|.*Attrib|.*AttribI|.*AttribL|.*Pointer|.*Enabled|.*Store|.*Mask)(d|dv|f|fv|fi|i|iv|ui|uiv|sv|us|usv|b|bv|ub|ubv|v|i_v|i64v|ui64v|i64_v|64iv)$"
       map="$1"/>
     <map-command target="^glVertexAttrib4N.*" map="VertexAttribN"/>
+    <map-command target="^gl(VertexAttribP\d).*" map="$1"/>
     
     <map-command target="(.*)(Matrix\dx*\d*)(dv|fv|iv|uiv|sv|usv|bv|ubv)$" map="$1"/>
     <map-command target="(.*)\d(d|dv|f|fv|i|iv|ui|uiv|s|sv|us|usv|b|bv|ub|ubv)$" map="$1"/>
@@ -40,19 +41,18 @@
     
     <map-param target="BufferObjectiv$::^(offset)$" type="Ptr&lt;int&gt;"/>
     <map-param target="BufferObjectuiv$::^(offset)$" type="Ptr&lt;uint&gt;"/>
-    <map-param target="BufferObjecti64v$::^(offset)$" type="Ptr&lt;long&gt;"/>
-    <map-param target="BufferObjectui64v$::^(offset)$" type="Ptr&lt;ulong&gt;"/>
     
-    <map-param target="\D(i64v|64iv)$::^(params|param)$" type="Ptr&lt;long&gt;"/>
+    <map-param target="\D(i64v|64iv)$::^(offset|params|param)$" type="Ptr&lt;long&gt;"/>
+    <map-param target="\D(ui64v)$::^(offset|params)$" type="Ptr&lt;ulong&gt;"/>
     <map-param target="\D(dv)$::^(params|param|value)$" type="Ptr&lt;double&gt;"/>
     <map-param target="\D(fv)$::^(params|param|value|values)$" type="Ptr&lt;float&gt;"/>
     <map-param target="\D(iv)$::^(params|param|value)$" type="Ptr&lt;int&gt;"/>
     <map-param target="\D(uiv)$::^(params|param|value)$" type="Ptr&lt;uint&gt;"/>
 
-    <map-param target="\D(1dv)$::^(v)$" type="Ptr&lt;double&gt;"/>
-    <map-param target="\D(1fv)$::^(v)$" type="Ptr&lt;float&gt;"/>
-    <map-param target="\D(1iv)$::^(v)$" type="Ptr&lt;int&gt;"/>
-    <map-param target="\D(1uiv)$::^(v)$" type="Ptr&lt;uint&gt;"/>
+    <map-param target="\D(1dv)$::^(value|v)$" type="Ptr&lt;double&gt;"/>
+    <map-param target="\D(1fv)$::^(value|v)$" type="Ptr&lt;float&gt;"/>
+    <map-param target="\D(1iv)$::^(value|v)$" type="Ptr&lt;int&gt;"/>
+    <map-param target="\D(1uiv)$::^(value|v)$" type="Ptr&lt;uint&gt;"/>
     <map-param target="\D(1sv)$::^(v)$" type="Ptr&lt;short&gt;"/>
 
     <map-param target="\D(2dv)$::^(value|v)$"  type="Ptr&lt;RawVector2&lt;double&gt;&gt;"/>
