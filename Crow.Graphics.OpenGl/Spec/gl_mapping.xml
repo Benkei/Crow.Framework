@@ -5,9 +5,20 @@
     <map target="^(ref|in|params|object|string|event|base)$" map="@$1"/>
 
     <map-interface target="^GL_VERSION_\d_\d" namespace="Open Gl" class="Gl" filename="Gl.cs" camelcase="true"/>
-    <map-interface target="^GL_((?!VERSION)[^_]+)_(.*)" namespace="Open Gl" class="Gl::$1::$2" filename="Gl.$1.$2.cs" camelcase="true"/>
-    
-    <map-group target="^AttribMask" map="AttributeMask"/>
+    <map-interface target="^GL_((?!VERSION)[^_]+)_(.*)" namespace="Open Gl" class="Gl::$1_$2" filename="Gl.$1.cs" camelcase="true"/>
+
+    <map-group target=".*"
+               map="$1"
+               namespace="OpenGl"
+               class=""
+               filename="Enumerations.cs"
+               />
+    <map-group target="(.*)(3DFX|AMD|APPLE|ARB|ATI|EXT|GREMEDY|IBM|INGR|INTEL|KHR|MESA|NV|OES|OML|OVR|PGI|SGI|SGIS|SGIX|SUN|SUNX|WIN)$"
+               map="$1"
+               namespace="OpenGl"
+               class=""
+               filename="Enumerations.$2.cs"
+               />
 
     <map-enum target="^GL_(.*)" map="$1"/>
     <map-enum target="(.*)(_3DFX|_EXT|_SGI|_SGIX|_SGIS|_ARB|_APPLE|_NV|_PGI|_AMD|_ATI|_INTEL|_HP|_IBM|_INGR|_KHR|_MESA|_MESAX|_NVX|_OES|_OML|_OVR|_REND|_SUN|_SUNX|_WIN)$" map="$1"/>
