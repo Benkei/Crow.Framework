@@ -10,52 +10,15 @@ namespace OpenGl
 
 		public static int Size
 		{
-			//		[ILSub ( @"
-			//sizeof !T
-			//ret" )]
 			[MethodImpl ( MethodImplOptions.AggressiveInlining )]
-			get
-			{
-				//return sizeof ( T );
-				throw new NotImplementedException ();
-			}
+			get { return _Size (); }
 		}
-
-		//		[ILSub ( @"
-		//	ldarg.2
-		//	ldarg.0
-		//	ldfld native int valuetype OpenGl.Ptr`1<!T>::Pointer
-		//	ldarg.1
-		//	call native int [mscorlib]System.IntPtr::op_Addition(native int, int32)
-		//	call void* [mscorlib]System.IntPtr::op_Explicit(native int)
-		//	ldobj !T
-		//	stobj !T
-		//	ret
-		//" )]
-		[MethodImpl ( MethodImplOptions.AggressiveInlining )]
-		public unsafe void Read(int byteOffset, out T value)
-		{
-			//value = *(Muh*)(Pointer + byteOffset);
-			throw new NotImplementedException ();
-		}
-
-		//		[ILSub ( @"
-		//	ldarg.0
-		//	ldfld native int valuetype OpenGl.Ptr`1<!T>::Pointer
-		//	ldarg.1
-		//	call native int [mscorlib]System.IntPtr::op_Addition(native int, int32)
-		//	call void* [mscorlib]System.IntPtr::op_Explicit(native int)
-		//	ldarg.2
-		//	ldobj !T
-		//	stobj !T
-		//	ret
-		//" )]
-		[MethodImpl ( MethodImplOptions.AggressiveInlining )]
-		public unsafe void Write(int byteOffset, ref T value)
-		{
-			//*(T*)(Pointer + byteOffset) = value;
-			throw new NotImplementedException ();
-		}
+		
+		[MethodImpl ( MethodImplOptions.ForwardRef )]
+		public extern void Read(int byteOffset, out T value);
+		
+		[MethodImpl ( MethodImplOptions.ForwardRef )]
+		public extern void Write(int byteOffset, ref T value);
 
 		public static implicit operator IntPtr(Ptr<T> pointer)
 		{
@@ -65,7 +28,11 @@ namespace OpenGl
 		{
 			return new Ptr<T> () { Pointer = pointer };
 		}
+		
+		[MethodImpl ( MethodImplOptions.ForwardRef )]
+		private static extern int _Size();
 	}
+
 	public struct StringPtr
 	{
 		public IntPtr Pointer;
