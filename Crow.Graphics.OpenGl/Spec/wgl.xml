@@ -469,25 +469,25 @@
     <!-- SECTION: WGL command definitions. -->
     <commands namespace="WGL">
         <command>
-            <proto>int <name>ChoosePixelFormat</name></proto>
+            <proto><ptype>int</ptype> <name>ChoosePixelFormat</name></proto>
             <param><ptype>HDC</ptype> <name>hDc</name></param>
             <param>const <ptype>PIXELFORMATDESCRIPTOR</ptype> *<name>pPfd</name></param>
         </command>
         <command>
-            <proto>int <name>DescribePixelFormat</name></proto>
+            <proto><ptype>int</ptype> <name>DescribePixelFormat</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>ipfd</name></param>
+            <param><ptype>int</ptype> <name>ipfd</name></param>
             <param><ptype>UINT</ptype> <name>cjpfd</name></param>
             <param>const <ptype>PIXELFORMATDESCRIPTOR</ptype> *<name>ppfd</name></param>
         </command>
         <command>
-            <proto>int <name>GetPixelFormat</name></proto>
+            <proto><ptype>int</ptype> <name>GetPixelFormat</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>SetPixelFormat</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>ipfd</name></param>
+            <param><ptype>int</ptype> <name>ipfd</name></param>
             <param>const <ptype>PIXELFORMATDESCRIPTOR</ptype> *<name>ppfd</name></param>
         </command>
         <command>
@@ -524,7 +524,7 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglBindTexImageARB</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iBuffer</name></param>
+            <param><ptype>int</ptype> <name>iBuffer</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglBindVideoCaptureDeviceNV</name></proto>
@@ -534,15 +534,15 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglBindVideoDeviceNV</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>unsigned int <name>uVideoSlot</name></param>
+            <param><ptype>unsigned int</ptype> <name>uVideoSlot</name></param>
             <param><ptype>HVIDEOOUTPUTDEVICENV</ptype> <name>hVideoDevice</name></param>
-            <param>const int *<name>piAttribList</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttribList</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglBindVideoImageNV</name></proto>
             <param><ptype>HPVIDEODEV</ptype> <name>hVideoDevice</name></param>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iVideoBuffer</name></param>
+            <param><ptype>int</ptype> <name>iVideoBuffer</name></param>
         </command>
         <command>
             <proto><ptype>VOID</ptype> <name>wglBlitContextFramebufferAMD</name></proto>
@@ -561,19 +561,19 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglChoosePixelFormatARB</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>const int *<name>piAttribIList</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttribIList</name></param>
             <param>const <ptype>FLOAT</ptype> *<name>pfAttribFList</name></param>
             <param><ptype>UINT</ptype> <name>nMaxFormats</name></param>
-            <param>int *<name>piFormats</name></param>
+            <param><ptype>int</ptype> *<name>piFormats</name></param>
             <param><ptype>UINT</ptype> *<name>nNumFormats</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglChoosePixelFormatEXT</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>const int *<name>piAttribIList</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttribIList</name></param>
             <param>const <ptype>FLOAT</ptype> *<name>pfAttribFList</name></param>
             <param><ptype>UINT</ptype> <name>nMaxFormats</name></param>
-            <param>int *<name>piFormats</name></param>
+            <param><ptype>int</ptype> *<name>piFormats</name></param>
             <param><ptype>UINT</ptype> *<name>nNumFormats</name></param>
         </command>
         <command>
@@ -614,12 +614,12 @@
             <proto><ptype>HGLRC</ptype> <name>wglCreateAssociatedContextAttribsAMD</name></proto>
             <param><ptype>UINT</ptype> <name>id</name></param>
             <param><ptype>HGLRC</ptype> <name>hShareContext</name></param>
-            <param>const int *<name>attribList</name></param>
+            <param>const <ptype>int</ptype> *<name>attribList</name></param>
         </command>
         <command>
             <proto><ptype>HANDLE</ptype> <name>wglCreateBufferRegionARB</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
             <param><ptype>UINT</ptype> <name>uType</name></param>
         </command>
         <command>
@@ -630,7 +630,7 @@
             <proto><ptype>HGLRC</ptype> <name>wglCreateContextAttribsARB</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
             <param><ptype>HGLRC</ptype> <name>hShareContext</name></param>
-            <param>const int *<name>attribList</name></param>
+            <param>const <ptype>int</ptype> *<name>attribList</name></param>
         </command>
         <command>
             <proto><ptype>GLboolean</ptype> <name>wglCreateDisplayColorTableEXT</name></proto>
@@ -645,23 +645,23 @@
         <command>
             <proto><ptype>HGLRC</ptype> <name>wglCreateLayerContext</name></proto>
             <param><ptype>HDC</ptype> <name>hDc</name></param>
-            <param>int <name>level</name></param>
+            <param><ptype>int</ptype> <name>level</name></param>
         </command>
         <command>
             <proto><ptype>HPBUFFERARB</ptype> <name>wglCreatePbufferARB</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iPixelFormat</name></param>
-            <param>int <name>iWidth</name></param>
-            <param>int <name>iHeight</name></param>
-            <param>const int *<name>piAttribList</name></param>
+            <param><ptype>int</ptype> <name>iPixelFormat</name></param>
+            <param><ptype>int</ptype> <name>iWidth</name></param>
+            <param><ptype>int</ptype> <name>iHeight</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttribList</name></param>
         </command>
         <command>
             <proto><ptype>HPBUFFEREXT</ptype> <name>wglCreatePbufferEXT</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iPixelFormat</name></param>
-            <param>int <name>iWidth</name></param>
-            <param>int <name>iHeight</name></param>
-            <param>const int *<name>piAttribList</name></param>
+            <param><ptype>int</ptype> <name>iPixelFormat</name></param>
+            <param><ptype>int</ptype> <name>iWidth</name></param>
+            <param><ptype>int</ptype> <name>iHeight</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttribList</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglDelayBeforeSwapNV</name></proto>
@@ -687,8 +687,8 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglDescribeLayerPlane</name></proto>
             <param><ptype>HDC</ptype> <name>hDc</name></param>
-            <param>int <name>pixelFormat</name></param>
-            <param>int <name>layerPlane</name></param>
+            <param><ptype>int</ptype> <name>pixelFormat</name></param>
+            <param><ptype>int</ptype> <name>layerPlane</name></param>
             <param><ptype>UINT</ptype> <name>nBytes</name></param>
             <param>const <ptype>LAYERPLANEDESCRIPTOR</ptype> *<name>plpd</name></param>
         </command>
@@ -775,7 +775,7 @@
             <param><ptype>HVIDEOINPUTDEVICENV</ptype> *<name>phDeviceList</name></param>
         </command>
         <command>
-            <proto>int <name>wglEnumerateVideoDevicesNV</name></proto>
+            <proto><ptype>int</ptype> <name>wglEnumerateVideoDevicesNV</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
             <param><ptype>HVIDEOOUTPUTDEVICENV</ptype> *<name>phDeviceList</name></param>
         </command>
@@ -846,8 +846,8 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetDigitalVideoParametersI3D</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param><ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>UINT</ptype> <name>GetEnhMetaFilePixelFormat</name></proto>
@@ -868,7 +868,7 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetGammaTableI3D</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iEntries</name></param>
+            <param><ptype>int</ptype> <name>iEntries</name></param>
             <param><ptype>USHORT</ptype> *<name>puRed</name></param>
             <param><ptype>USHORT</ptype> *<name>puGreen</name></param>
             <param><ptype>USHORT</ptype> *<name>puBlue</name></param>
@@ -876,8 +876,8 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetGammaTableParametersI3D</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param><ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetGenlockSampleRateI3D</name></proto>
@@ -907,17 +907,17 @@
         <command>
             <proto><ptype>INT</ptype> <name>wglGetGPUInfoAMD</name></proto>
             <param><ptype>UINT</ptype> <name>id</name></param>
-            <param>int <name>property</name></param>
+            <param><ptype>int</ptype> <name>property</name></param>
             <param><ptype>GLenum</ptype> <name>dataType</name></param>
             <param><ptype>UINT</ptype> <name>size</name></param>
             <param>void *<name>data</name></param>
         </command>
         <command>
-            <proto>int <name>wglGetLayerPaletteEntries</name></proto>
+            <proto><ptype>int</ptype> <name>wglGetLayerPaletteEntries</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iLayerPlane</name></param>
-            <param>int <name>iStart</name></param>
-            <param>int <name>cEntries</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iStart</name></param>
+            <param><ptype>int</ptype> <name>cEntries</name></param>
             <param>const <ptype>COLORREF</ptype> *<name>pcr</name></param>
         </command>
         <command>
@@ -937,45 +937,45 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetPixelFormatAttribfvARB</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iPixelFormat</name></param>
-            <param>int <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iPixelFormat</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
             <param><ptype>UINT</ptype> <name>nAttributes</name></param>
-            <param>const int *<name>piAttributes</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttributes</name></param>
             <param><ptype>FLOAT</ptype> *<name>pfValues</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetPixelFormatAttribfvEXT</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iPixelFormat</name></param>
-            <param>int <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iPixelFormat</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
             <param><ptype>UINT</ptype> <name>nAttributes</name></param>
-            <param>int *<name>piAttributes</name></param>
+            <param><ptype>int</ptype> *<name>piAttributes</name></param>
             <param><ptype>FLOAT</ptype> *<name>pfValues</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetPixelFormatAttribivARB</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iPixelFormat</name></param>
-            <param>int <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iPixelFormat</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
             <param><ptype>UINT</ptype> <name>nAttributes</name></param>
-            <param>const int *<name>piAttributes</name></param>
-            <param>int *<name>piValues</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttributes</name></param>
+            <param><ptype>int</ptype> *<name>piValues</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetPixelFormatAttribivEXT</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iPixelFormat</name></param>
-            <param>int <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iPixelFormat</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
             <param><ptype>UINT</ptype> <name>nAttributes</name></param>
-            <param>int *<name>piAttributes</name></param>
-            <param>int *<name>piValues</name></param>
+            <param><ptype>int</ptype> *<name>piAttributes</name></param>
+            <param><ptype>int</ptype> *<name>piValues</name></param>
         </command>
         <command>
             <proto><ptype>PROC</ptype> <name>wglGetProcAddress</name></proto>
             <param><ptype>LPCSTR</ptype> <name>lpszProc</name></param>
         </command>
         <command>
-            <proto>int <name>wglGetSwapIntervalEXT</name></proto>
+            <proto><ptype>int</ptype> <name>wglGetSwapIntervalEXT</name></proto>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetSyncValuesOML</name></proto>
@@ -987,7 +987,7 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglGetVideoDeviceNV</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>numDevices</name></param>
+            <param><ptype>int</ptype> <name>numDevices</name></param>
             <param><ptype>HPVIDEODEV</ptype> *<name>hVideoDevice</name></param>
         </command>
         <command>
@@ -1043,8 +1043,8 @@
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglQueryCurrentContextNV</name></proto>
-            <param>int <name>iAttribute</name></param>
-            <param>int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param><ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglQueryFrameCountNV</name></proto>
@@ -1076,14 +1076,14 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglQueryPbufferARB</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param><ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglQueryPbufferEXT</name></proto>
             <param><ptype>HPBUFFEREXT</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param><ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglQuerySwapGroupNV</name></proto>
@@ -1095,13 +1095,13 @@
             <proto><ptype>BOOL</ptype> <name>wglQueryVideoCaptureDeviceNV</name></proto>
             <param><ptype>HDC</ptype> <name>hDc</name></param>
             <param><ptype>HVIDEOINPUTDEVICENV</ptype> <name>hDevice</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param><ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglRealizeLayerPalette</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
             <param><ptype>BOOL</ptype> <name>bRealize</name></param>
         </command>
         <command>
@@ -1111,19 +1111,19 @@
             <param><ptype>UINT</ptype> <name>count</name></param>
         </command>
         <command>
-            <proto>int <name>wglReleasePbufferDCARB</name></proto>
+            <proto><ptype>int</ptype> <name>wglReleasePbufferDCARB</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
         </command>
         <command>
-            <proto>int <name>wglReleasePbufferDCEXT</name></proto>
+            <proto><ptype>int</ptype> <name>wglReleasePbufferDCEXT</name></proto>
             <param><ptype>HPBUFFEREXT</ptype> <name>hPbuffer</name></param>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglReleaseTexImageARB</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iBuffer</name></param>
+            <param><ptype>int</ptype> <name>iBuffer</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglReleaseVideoCaptureDeviceNV</name></proto>
@@ -1137,7 +1137,7 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglReleaseVideoImageNV</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iVideoBuffer</name></param>
+            <param><ptype>int</ptype> <name>iVideoBuffer</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglResetFrameCountNV</name></proto>
@@ -1146,38 +1146,38 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglRestoreBufferRegionARB</name></proto>
             <param><ptype>HANDLE</ptype> <name>hRegion</name></param>
-            <param>int <name>x</name></param>
-            <param>int <name>y</name></param>
-            <param>int <name>width</name></param>
-            <param>int <name>height</name></param>
-            <param>int <name>xSrc</name></param>
-            <param>int <name>ySrc</name></param>
+            <param><ptype>int</ptype> <name>x</name></param>
+            <param><ptype>int</ptype> <name>y</name></param>
+            <param><ptype>int</ptype> <name>width</name></param>
+            <param><ptype>int</ptype> <name>height</name></param>
+            <param><ptype>int</ptype> <name>xSrc</name></param>
+            <param><ptype>int</ptype> <name>ySrc</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSaveBufferRegionARB</name></proto>
             <param><ptype>HANDLE</ptype> <name>hRegion</name></param>
-            <param>int <name>x</name></param>
-            <param>int <name>y</name></param>
-            <param>int <name>width</name></param>
-            <param>int <name>height</name></param>
+            <param><ptype>int</ptype> <name>x</name></param>
+            <param><ptype>int</ptype> <name>y</name></param>
+            <param><ptype>int</ptype> <name>width</name></param>
+            <param><ptype>int</ptype> <name>height</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSendPbufferToVideoNV</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>int <name>iBufferType</name></param>
+            <param><ptype>int</ptype> <name>iBufferType</name></param>
             <param>unsigned long *<name>pulCounterPbuffer</name></param>
             <param><ptype>BOOL</ptype> <name>bBlock</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSetDigitalVideoParametersI3D</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>const int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param>const <ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSetGammaTableI3D</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iEntries</name></param>
+            <param><ptype>int</ptype> <name>iEntries</name></param>
             <param>const <ptype>USHORT</ptype> *<name>puRed</name></param>
             <param>const <ptype>USHORT</ptype> *<name>puGreen</name></param>
             <param>const <ptype>USHORT</ptype> *<name>puBlue</name></param>
@@ -1185,21 +1185,21 @@
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSetGammaTableParametersI3D</name></proto>
             <param><ptype>HDC</ptype> <name>hDC</name></param>
-            <param>int <name>iAttribute</name></param>
-            <param>const int *<name>piValue</name></param>
+            <param><ptype>int</ptype> <name>iAttribute</name></param>
+            <param>const <ptype>int</ptype> *<name>piValue</name></param>
         </command>
         <command>
-            <proto>int <name>wglSetLayerPaletteEntries</name></proto>
+            <proto><ptype>int</ptype> <name>wglSetLayerPaletteEntries</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>iLayerPlane</name></param>
-            <param>int <name>iStart</name></param>
-            <param>int <name>cEntries</name></param>
+            <param><ptype>int</ptype> <name>iLayerPlane</name></param>
+            <param><ptype>int</ptype> <name>iStart</name></param>
+            <param><ptype>int</ptype> <name>cEntries</name></param>
             <param>const <ptype>COLORREF</ptype> *<name>pcr</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSetPbufferAttribARB</name></proto>
             <param><ptype>HPBUFFERARB</ptype> <name>hPbuffer</name></param>
-            <param>const int *<name>piAttribList</name></param>
+            <param>const <ptype>int</ptype> *<name>piAttribList</name></param>
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSetStereoEmitterState3DL</name></proto>
@@ -1225,12 +1225,12 @@
         </command>
         <command>
             <proto><ptype>BOOL</ptype> <name>wglSwapIntervalEXT</name></proto>
-            <param>int <name>interval</name></param>
+            <param><ptype>int</ptype> <name>interval</name></param>
         </command>
         <command>
             <proto><ptype>INT64</ptype> <name>wglSwapLayerBuffersMscOML</name></proto>
             <param><ptype>HDC</ptype> <name>hdc</name></param>
-            <param>int <name>fuPlanes</name></param>
+            <param><ptype>int</ptype> <name>fuPlanes</name></param>
             <param><ptype>INT64</ptype> <name>target_msc</name></param>
             <param><ptype>INT64</ptype> <name>divisor</name></param>
             <param><ptype>INT64</ptype> <name>remainder</name></param>
@@ -1264,7 +1264,7 @@
             <param><ptype>DWORD</ptype> <name>listBase</name></param>
             <param><ptype>FLOAT</ptype> <name>deviation</name></param>
             <param><ptype>FLOAT</ptype> <name>extrusion</name></param>
-            <param>int <name>format</name></param>
+            <param><ptype>int</ptype> <name>format</name></param>
             <param><ptype>LPGLYPHMETRICSFLOAT</ptype> <name>lpgmf</name></param>
         </command>
         <command>
@@ -1275,7 +1275,7 @@
             <param><ptype>DWORD</ptype> <name>listBase</name></param>
             <param><ptype>FLOAT</ptype> <name>deviation</name></param>
             <param><ptype>FLOAT</ptype> <name>extrusion</name></param>
-            <param>int <name>format</name></param>
+            <param><ptype>int</ptype> <name>format</name></param>
             <param><ptype>LPGLYPHMETRICSFLOAT</ptype> <name>lpgmf</name></param>
         </command>
         <command>
@@ -1286,7 +1286,7 @@
             <param><ptype>DWORD</ptype> <name>listBase</name></param>
             <param><ptype>FLOAT</ptype> <name>deviation</name></param>
             <param><ptype>FLOAT</ptype> <name>extrusion</name></param>
-            <param>int <name>format</name></param>
+            <param><ptype>int</ptype> <name>format</name></param>
             <param><ptype>LPGLYPHMETRICSFLOAT</ptype> <name>lpgmf</name></param>
         </command>
         <command>

@@ -1,0 +1,1 @@
+"../../Tools/SharpSpecGen.exe" "wgl.xml" "wgl_mapping.xml" "wgl" "" "1.0" "../Gen/wgl"
