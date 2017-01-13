@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEB7B06A-A1C3-424F-AE6B-8363D80A9EAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crow.Graphics</RootNamespace>
+    <AssemblyName>Crow.Graphics</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;OPENGL;OPENAL;XNADESIGNPROVIDED;WINDOWS;DESKTOPGL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;OPENGL;OPENAL;XNADESIGNPROVIDED;WINDOWS;DESKTOPGL</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClearOptions.cs" />
+    <Compile Include="ColorWriteChannels.cs" />
+    <Compile Include="CubeMapFace.cs" />
+    <Compile Include="DeviceLostException.cs" />
+    <Compile Include="DeviceNotResetException.cs" />
+    <Compile Include="DirectionalLight.cs" />
+    <Compile Include="DisplayMode.cs" />
+    <Compile Include="DisplayModeCollection.cs" />
+    <Compile Include="DxtUtil.cs" />
+    <Compile Include="Effect\Effect.cs" />
+    <Compile Include="Effect\EffectAnnotation.cs" />
+    <Compile Include="Effect\EffectAnnotationCollection.cs" />
+    <Compile Include="Effect\EffectHelpers.cs" />
+    <Compile Include="Effect\EffectMaterial.cs" />
+    <Compile Include="Effect\EffectParameter.cs" />
+    <Compile Include="Effect\EffectParameterClass.cs" />
+    <Compile Include="Effect\EffectParameterCollection.cs" />
+    <Compile Include="Effect\EffectParameterType.cs" />
+    <Compile Include="Effect\EffectPass.cs" />
+    <Compile Include="Effect\EffectPassCollection.cs" />
+    <Compile Include="Effect\EffectResource.cs" />
+    <Compile Include="Effect\EffectResource.OpenGL.cs" />
+    <Compile Include="Effect\EffectTechnique.cs" />
+    <Compile Include="Effect\EffectTechniqueCollection.cs" />
+    <Compile Include="GraphicsAdapter.Legacy.cs" />
+    <Compile Include="GraphicsCapabilities.cs" />
+    <Compile Include="GraphicsContext.SDL.cs" />
+    <Compile Include="GraphicsDevice.cs" />
+    <Compile Include="GraphicsDevice.OpenGL.cs" />
+    <Compile Include="GraphicsDevice.OpenGL.FramebufferHelper.cs" />
+    <Compile Include="GraphicsDeviceStatus.cs" />
+    <Compile Include="GraphicsExtensions.cs" />
+    <Compile Include="GraphicsMetrics.cs" />
+    <Compile Include="GraphicsProfile.cs" />
+    <Compile Include="GraphicsResource.cs" />
+    <Compile Include="Hash.cs" />
+    <Compile Include="IGraphicsContext.cs" />
+    <Compile Include="ImageEx.cs" />
+    <Compile Include="IRenderTarget.cs" />
+    <Compile Include="IWindowInfo.cs" />
+    <Compile Include="Mathematics\AngleSingle.cs" />
+    <Compile Include="Mathematics\Bool4.cs" />
+    <Compile Include="Mathematics\BoundingBox.cs" />
+    <Compile Include="Mathematics\BoundingFrustum.cs" />
+    <Compile Include="Mathematics\BoundingSphere.cs" />
+    <Compile Include="Mathematics\Collision.cs" />
+    <Compile Include="Mathematics\Color.cs" />
+    <Compile Include="Mathematics\Color.Palette.cs" />
+    <Compile Include="Mathematics\Color3.cs" />
+    <Compile Include="Mathematics\Color4.cs" />
+    <Compile Include="Mathematics\ColorBGRA.cs" />
+    <Compile Include="Mathematics\Enums.cs" />
+    <Compile Include="Mathematics\FrustumCameraParams.cs" />
+    <Compile Include="Mathematics\Half.cs" />
+    <Compile Include="Mathematics\Half2.cs" />
+    <Compile Include="Mathematics\Half3.cs" />
+    <Compile Include="Mathematics\Half4.cs" />
+    <Compile Include="Mathematics\HalfUtils.cs" />
+    <Compile Include="Mathematics\Int3.cs" />
+    <Compile Include="Mathematics\Int4.cs" />
+    <Compile Include="Mathematics\MathUtil.cs" />
+    <Compile Include="Mathematics\Matrix.cs" />
+    <Compile Include="Mathematics\Matrix3x2.cs" />
+    <Compile Include="Mathematics\Matrix3x3.cs" />
+    <Compile Include="Mathematics\Matrix5x4.cs" />
+    <Compile Include="Mathematics\NamespaceDoc.cs" />
+    <Compile Include="Mathematics\OrientedBoundingBox.cs" />
+    <Compile Include="Mathematics\Plane.cs" />
+    <Compile Include="Mathematics\Point.cs" />
+    <Compile Include="Mathematics\Quaternion.cs" />
+    <Compile Include="Mathematics\RandomUtil.cs" />
+    <Compile Include="Mathematics\Ray.cs" />
+    <Compile Include="Mathematics\Rectangle.cs" />
+    <Compile Include="Mathematics\RectangleF.cs" />
+    <Compile Include="Mathematics\Vector2.cs" />
+    <Compile Include="Mathematics\Vector3.cs" />
+    <Compile Include="Mathematics\Vector4.cs" />
+    <Compile Include="Mathematics\Viewport.cs" />
+    <Compile Include="Mathematics\ViewportF.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="ModelBone.cs" />
+    <Compile Include="ModelBoneCollection.cs" />
+    <Compile Include="ModelEffectCollection.cs" />
+    <Compile Include="ModelMesh.cs" />
+    <Compile Include="ModelMeshCollection.cs" />
+    <Compile Include="ModelMeshPart.cs" />
+    <Compile Include="ModelMeshPartCollection.cs" />
+    <Compile Include="NoSuitableGraphicsDeviceException.cs" />
+    <Compile Include="OcclusionQuery.cs" />
+    <Compile Include="OcclusionQuery.OpenGL.cs" />
+    <Compile Include="OpenGL.Common.cs" />
+    <Compile Include="OpenGL.cs" />
+    <Compile Include="OpenGL.SDL.cs" />
+    <Compile Include="PackedVector\Alpha8.cs" />
+    <Compile Include="PackedVector\Bgr565.cs" />
+    <Compile Include="PackedVector\Bgra4444.cs" />
+    <Compile Include="PackedVector\Bgra5551.cs" />
+    <Compile Include="PackedVector\Byte4.cs" />
+    <Compile Include="PackedVector\HalfSingle.cs" />
+    <Compile Include="PackedVector\HalfTypeHelper.cs" />
+    <Compile Include="PackedVector\HalfVector2.cs" />
+    <Compile Include="PackedVector\HalfVector4.cs" />
+    <Compile Include="PackedVector\IPackedVector.cs" />
+    <Compile Include="PackedVector\NormalizedByte2.cs" />
+    <Compile Include="PackedVector\NormalizedByte4.cs" />
+    <Compile Include="PackedVector\NormalizedShort2.cs" />
+    <Compile Include="PackedVector\NormalizedShort4.cs" />
+    <Compile Include="PackedVector\Rg32.cs" />
+    <Compile Include="PackedVector\Rgba1010102.cs" />
+    <Compile Include="PackedVector\Rgba64.cs" />
+    <Compile Include="PackedVector\Short2.cs" />
+    <Compile Include="PackedVector\Short4.cs" />
+    <Compile Include="PresentationParameters.cs" />
+    <Compile Include="PresentInterval.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderTarget2D.cs" />
+    <Compile Include="RenderTarget2D.OpenGL.cs" />
+    <Compile Include="RenderTargetBinding.cs" />
+    <Compile Include="RenderTargetCube.cs" />
+    <Compile Include="RenderTargetCube.OpenGL.cs" />
+    <Compile Include="RenderTargetUsage.cs" />
+    <Compile Include="ResourceCreatedEventArgs.cs" />
+    <Compile Include="ResourceDestroyedEventArgs.cs" />
+    <Compile Include="SamplerStateCollection.cs" />
+    <Compile Include="SamplerStateCollection.OpenGL.cs" />
+    <Compile Include="SetDataOptions.cs" />
+    <Compile Include="Shader\ConstantBuffer.cs" />
+    <Compile Include="Shader\ConstantBuffer.OpenGL.cs" />
+    <Compile Include="Shader\ConstantBufferCollection.cs" />
+    <Compile Include="Shader\Shader.cs" />
+    <Compile Include="Shader\Shader.OpenGL.cs" />
+    <Compile Include="Shader\ShaderProgramCache.cs" />
+    <Compile Include="Shader\ShaderStage.cs" />
+    <Compile Include="SpriteBatch.cs" />
+    <Compile Include="SpriteBatcher.cs" />
+    <Compile Include="SpriteBatchItem.cs" />
+    <Compile Include="SpriteEffects.cs" />
+    <Compile Include="SpriteFont.cs" />
+    <Compile Include="SpriteSortMode.cs" />
+    <Compile Include="States\Blend.cs" />
+    <Compile Include="States\BlendFunction.cs" />
+    <Compile Include="States\BlendState.cs" />
+    <Compile Include="States\BlendState.OpenGL.cs" />
+    <Compile Include="States\CompareFunction.cs" />
+    <Compile Include="States\CullMode.cs" />
+    <Compile Include="States\DepthFormat.cs" />
+    <Compile Include="States\DepthStencilState.cs" />
+    <Compile Include="States\DepthStencilState.OpenGL.cs" />
+    <Compile Include="States\FillMode.cs" />
+    <Compile Include="States\RasterizerState.cs" />
+    <Compile Include="States\RasterizerState.OpenGL.cs" />
+    <Compile Include="States\SamplerState.cs" />
+    <Compile Include="States\SamplerState.OpenGL.cs" />
+    <Compile Include="States\StencilOperation.cs" />
+    <Compile Include="States\TargetBlendState.cs" />
+    <Compile Include="States\TextureAddressMode.cs" />
+    <Compile Include="States\TextureFilter.cs" />
+    <Compile Include="SurfaceFormat.cs" />
+    <Compile Include="Texture.cs" />
+    <Compile Include="Texture.OpenGL.cs" />
+    <Compile Include="Texture2D.cs" />
+    <Compile Include="Texture2D.OpenGL.cs" />
+    <Compile Include="Texture3D.cs" />
+    <Compile Include="Texture3D.OpenGL.cs" />
+    <Compile Include="TextureCollection.cs" />
+    <Compile Include="TextureCollection.OpenGL.cs" />
+    <Compile Include="TextureCube.cs" />
+    <Compile Include="TextureCube.OpenGL.cs" />
+    <Compile Include="Threading.cs" />
+    <Compile Include="Vertices\BufferUsage.cs" />
+    <Compile Include="Vertices\DynamicIndexBuffer.cs" />
+    <Compile Include="Vertices\DynamicVertexBuffer.cs" />
+    <Compile Include="Vertices\IndexBuffer.cs" />
+    <Compile Include="Vertices\IndexBuffer.OpenGL.cs" />
+    <Compile Include="Vertices\IndexElementSize.cs" />
+    <Compile Include="Vertices\IVertexType.cs" />
+    <Compile Include="Vertices\PrimitiveType.cs" />
+    <Compile Include="Vertices\VertexBuffer.cs" />
+    <Compile Include="Vertices\VertexBuffer.OpenGL.cs" />
+    <Compile Include="Vertices\VertexBufferBinding.cs" />
+    <Compile Include="Vertices\VertexBufferBindings.cs" />
+    <Compile Include="Vertices\VertexDeclaration.cs" />
+    <Compile Include="Vertices\VertexDeclaration.OpenGL.cs" />
+    <Compile Include="Vertices\VertexDeclarationCache.cs" />
+    <Compile Include="Vertices\VertexElement.cs" />
+    <Compile Include="Vertices\VertexElementFormat.cs" />
+    <Compile Include="Vertices\VertexElementUsage.cs" />
+    <Compile Include="Vertices\VertexInputLayout.cs" />
+    <Compile Include="Vertices\VertexPosition.cs" />
+    <Compile Include="Vertices\VertexPositionColor.cs" />
+    <Compile Include="Vertices\VertexPositionColorTexture.cs" />
+    <Compile Include="Vertices\VertexPositionNormalTexture.cs" />
+    <Compile Include="Vertices\VertexPositionTexture.cs" />
+    <Compile Include="Viewport.cs" />
+    <Compile Include="WindowInfo.SDL.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

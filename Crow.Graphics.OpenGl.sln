@@ -1,13 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crow.Graphics.OpenGl", "Crow.Graphics.OpenGl\Crow.Graphics.OpenGl.csproj", "{B992B651-F5AA-4105-9495-494E770C3010}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSpecGen", "Tools\SharpSpecGen\SharpSpecGen.csproj", "{AD8D338D-2247-4C90-ADFA-80A7F1C79529}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{50743143-2A34-45C3-8016-3B01B3C9A310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{6C9415FA-3160-4D80-AB63-83BE2F713919}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crow.Graphics", "Crow.Graphics\Crow.Graphics.csproj", "{AEB7B06A-A1C3-424F-AE6B-8363D80A9EAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crow.Graphics.Vulkan", "Crow.Graphics.Vulkan\Crow.Graphics.Vulkan.csproj", "{C7F9CA01-A6BB-4F3D-A610-60ACAB0F4943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crow.Graphics.Vulkan.SpecGen", "Crow.Graphics.Vulkan.SpecGen\Crow.Graphics.Vulkan.SpecGen.csproj", "{D556ED03-DA1D-4D22-8C54-C69CB9924310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crow.Win32", "Crow.Win32\Crow.Win32.csproj", "{9CBC7CBA-A211-4298-A108-9E3BE68CA2BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +33,26 @@ Global
 		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD8D338D-2247-4C90-ADFA-80A7F1C79529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C9415FA-3160-4D80-AB63-83BE2F713919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C9415FA-3160-4D80-AB63-83BE2F713919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C9415FA-3160-4D80-AB63-83BE2F713919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C9415FA-3160-4D80-AB63-83BE2F713919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB7B06A-A1C3-424F-AE6B-8363D80A9EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB7B06A-A1C3-424F-AE6B-8363D80A9EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB7B06A-A1C3-424F-AE6B-8363D80A9EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB7B06A-A1C3-424F-AE6B-8363D80A9EAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F9CA01-A6BB-4F3D-A610-60ACAB0F4943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F9CA01-A6BB-4F3D-A610-60ACAB0F4943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F9CA01-A6BB-4F3D-A610-60ACAB0F4943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F9CA01-A6BB-4F3D-A610-60ACAB0F4943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D556ED03-DA1D-4D22-8C54-C69CB9924310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D556ED03-DA1D-4D22-8C54-C69CB9924310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D556ED03-DA1D-4D22-8C54-C69CB9924310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D556ED03-DA1D-4D22-8C54-C69CB9924310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CBC7CBA-A211-4298-A108-9E3BE68CA2BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CBC7CBA-A211-4298-A108-9E3BE68CA2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CBC7CBA-A211-4298-A108-9E3BE68CA2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CBC7CBA-A211-4298-A108-9E3BE68CA2BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

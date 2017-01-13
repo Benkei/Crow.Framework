@@ -1,0 +1,51 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #><#+
+protected void WriteDelegate(SpecDelegate info)
+{
+	var type = info.IsReturnVoid ? "void" : info.Return.FinalTypeName();
+#>
+/// <summary><#= info.DebugLog() #></summary>
+[SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Winapi)]
+public unsafe delegate <#= type #> <#= info.MapName #> (<#+ WriteParameters2(info.Parameters); #>);
+<#+
+}
+
+protected void WriteParameters2(List<SpecField> parameters)
+{
+#>
+<#= string.Join ( ", ", (from item in parameters select WriteParameter2(item)) ) #><#+
+}
+
+protected string WriteParameter2(SpecField parameter)
+{
+	string result = null;
+	string type;
+	if ( !string.IsNullOrEmpty(parameter.Attribute) )
+	{
+		result += parameter.Attribute + " ";
+	}
+	if ( string.Equals ( parameter.Type.Name, "void", StringComparison.InvariantCultureIgnoreCase ) )
+	{
+		type = "IntPtr";
+		result += "IntPtr";
+	}
+	else
+	{
+		type = parameter.Type.FinalTypeName();
+		if ( parameter.IsPointer && !(parameter.Attribute != null && (parameter.Attribute.Contains("out") || parameter.Attribute.Contains("ref"))) )
+		{
+			type += "*";
+		}
+		result += type;
+	}
+	result += " " + parameter.MapName;
+	if ( parameter.Optional )
+	{
+		result += " = default(" + type + ")";
+	}
+	return result;
+}
+#>

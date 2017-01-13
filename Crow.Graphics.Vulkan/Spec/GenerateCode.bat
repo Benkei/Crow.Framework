@@ -1,0 +1,1 @@
+"../../Tools/VulkanSpecGen.exe" "vk.xml" "mapping.xml" "../Gen" "vulkan" "1.0"

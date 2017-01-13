@@ -1,0 +1,10 @@
+shader03.vert
+Warning, version 400 is not yet complete; most version-specific features are present, but some are missing.
+
+Uniform reflection:
+
+Uniform block reflection:
+
+Vertex attribute reflection:
+gl_VertexIndex: offset 0, type 1404, size 0, index 0, binding -1
+

@@ -1,0 +1,195 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="CommandTemplete.tt" #>
+<#@ include file="StructTemplete.tt" #>
+<#@ include file="EnumTemplate.tt" #>
+<#@ include file="DelegateTemplete.tt" #>
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Security;
+
+<#
+	if (Classes != null)
+	{
+		Classes.Sort ( (a, b) => string.Compare(a.Name, b.Name) );
+		foreach (var item in Classes)
+		{
+			if(item.Namespace != null)
+			{
+				Begin(null, "namespace", item.Namespace, null);
+				WriteClass(item);
+				End();
+			}
+			else
+			{
+				WriteClass(item);
+			}
+		}
+	}
+#>
+
+<#+
+/*
+	/// <summary>
+	/// 
+	/// </summary>
+	public class ClassName { }
+*/
+protected void Begin(string accessor, string type, string name, string interfaces = null)
+{
+	if(accessor != null)
+		accessor += " ";
+#>
+<#= accessor ?? "" #><#= type #> <#= name #><#= (interfaces == null ? "" : (" : " + interfaces)) #>
+{
+<#+
+	this.PushIndent("	");
+}
+
+protected void End()
+{
+	this.PopIndent();
+#>
+}
+<#+
+}
+
+protected void WriteClass(ClassTemplate info)
+{
+	if(info.Name != null)
+		Begin(info.Accessor, info.Type, info.Name, info.Interfaces);
+	
+	info.NestedClass.Sort ( (a, b) => string.Compare(a.Name, b.Name) );
+	foreach(var item in info.NestedClass)
+	{
+		WriteClass(item);
+	}
+
+	bool hastCommands = false;
+	foreach(var item in info.Objects)
+	{
+		if(item is SpecStruct)
+		{
+			WriteStruct((SpecStruct)item);
+		}
+		else if(item is SpecEnum)
+		{
+			WriteEnum((SpecEnum)item);
+		}
+		else if(item is SpecCommand)
+		{
+			hastCommands = true;
+			WriteCommandDelegate((SpecCommand)item);
+		}
+		else if(item is SpecDelegate)
+		{
+			WriteDelegate((SpecDelegate)item);
+		}
+		else if(item is SpecExtension)
+		{
+			WriteExtension((SpecExtension)item);
+		}
+	}
+	if (hastCommands)
+	{
+		WriteLine("");
+		foreach(var item in info.Objects)
+		{
+			if(item is SpecCommand)
+			{
+				WriteCommandField((SpecCommand)item);
+			}
+		}
+		WriteLine("");
+		WriteClassContructor(info.Name, info.Objects);
+	}
+	
+	if(info.Name != null)
+		End();
+}
+
+
+protected void WriteClassContructor(string name, IEnumerable objects)
+{
+#>
+public unsafe <#= name #> (IHandleResolver resolver)
+{
+	if (resolver == null) throw new ArgumentNullException ("resolver");
+	byte[] buffer = new byte[] {
+<#+
+	foreach(var item in objects)
+	{
+		if(item is SpecCommand)
+		{
+			var info = (SpecCommand)item;
+#>
+		<#= string.Join(",", info.Name.Select((a)=>(byte)a).ToArray<byte>()) #>,0, // <#= info.Name #>
+<#+
+		}
+	}
+#>
+	};
+	fixed(byte* pBuffer = buffer)
+	{
+		IntPtr p = (IntPtr)pBuffer;
+<#+
+	int offset = 0;
+	foreach(var item in objects)
+	{
+		if(item is SpecCommand)
+		{
+			var info = (SpecCommand)item;
+#>
+		resolver.LoadHandle(p<#= offset > 0 ? " + " + offset : "" #>, out <#= info.MapName #>);
+<#+
+			offset += info.Name.Length + 1;
+		}
+	}
+#>
+	}
+}
+<#+
+}
+
+
+protected void WriteExtension(SpecExtension info)
+{
+#>
+// <#= info.Name #>
+<#+
+	Begin("public partial", "class", info.MapName, null);
+	
+	foreach(var item in info.Members)
+	{
+#>
+// <#= item.Name #>
+<#= item.Visibility #> <#= item.MapType #> <#= item.MapName #> = <#= item.Value #>;
+<#+
+	}
+
+	if(info.Commands.Count > 0)
+	{
+		WriteLine("");
+		foreach(var item in info.Commands)
+		{
+			WriteCommandDelegate(item);
+		}
+		WriteLine("");
+		foreach(var item in info.Commands)
+		{
+			WriteCommandField(item);
+		}
+		WriteLine("");
+		WriteClassContructor(info.MapName, info.Commands);
+	}
+
+	End();
+}
+#>

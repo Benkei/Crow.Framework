@@ -1,0 +1,10 @@
+shader07.frag
+Warning, version 450 is not yet complete; most version-specific features are present, but some are missing.
+
+Uniform reflection:
+u_Texture: offset -1, type 8b5e, size 1, index -1, binding 0
+
+Uniform block reflection:
+
+Vertex attribute reflection:
+

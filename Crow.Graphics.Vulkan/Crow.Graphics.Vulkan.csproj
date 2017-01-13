@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7F9CA01-A6BB-4F3D-A610-60ACAB0F4943}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crow.Graphics.Vulkan</RootNamespace>
+    <AssemblyName>Crow.Graphics.Vulkan</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boolean32.cs" />
+    <Compile Include="ClearColorValue.cs" />
+    <Compile Include="ClearValue.cs" />
+    <Compile Include="ExtensionProperties.cs" />
+    <Compile Include="Extent2D.cs" />
+    <Compile Include="Extent3D.cs" />
+    <Compile Include="Gen\Delegates.cs" />
+    <Compile Include="Gen\Enumerations.cs" />
+    <Compile Include="Gen\Functions.cs" />
+    <Compile Include="Gen\Structures.cs" />
+    <Compile Include="LayerProperties.cs" />
+    <Compile Include="Offset2D.cs" />
+    <Compile Include="Offset3D.cs" />
+    <Compile Include="PhysicalDeviceMemoryProperties.cs" />
+    <Compile Include="Rect2D.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="Viewport.cs" />
+    <Compile Include="VulkanDeviceHandleResolver.cs" />
+    <Compile Include="VulkanInstanceHandleResolver.cs" />
+    <Compile Include="VulkanGlobalHandleResolver.cs" />
+    <Compile Include="IHandleResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultUtil.cs" />
+    <Compile Include="Version.cs" />
+    <Compile Include="VulkanException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec\mapping.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Spec\vk.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Spec\GenerateCode.bat" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

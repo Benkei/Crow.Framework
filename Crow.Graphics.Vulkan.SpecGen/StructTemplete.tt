@@ -1,0 +1,139 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #><#+
+protected void WriteStruct(SpecStruct info)
+{
+	if(info.TypeHandle || info.TypeHandle64)
+	{
+		WriteStructHandle (info);
+		return;
+	}
+#>
+// <#= info.Name #>
+<#+
+	if(info.Members.Count > 1)
+	{
+#>
+[StructLayout (<#= info.Union ? "LayoutKind.Explicit" : "LayoutKind.Sequential" #>)]
+<#+
+	}
+#>
+public unsafe partial struct <#= info.MapName #>
+{
+<#+
+	foreach(var item in info.Members)
+	{
+#>
+	// <#= item.DebugLog() #>
+<#+
+		if(info.Members.Count > 1 && info.Union)
+		{
+#>
+	[FieldOffset (0)]
+<#+
+		}
+		if(item.FixedSize == 0 && item.FixedSizeEnum == null)
+		{
+#>
+	public <#= GetTypeMap(item) #> <#= item.MapName #>;
+<#+
+		}
+		else
+		{
+#>
+	public fixed <#= GetTypeMap(item) #> <#= item.MapName #>[<#= item.FixedSize #>];
+<#+
+		}
+	}
+#>
+}
+<#+
+}
+
+protected string GetTypeMap(SpecField field)
+{
+	if ( field.MapType != null )
+		return field.MapType;
+
+	string result = null;
+	string type;
+	if ( !string.IsNullOrEmpty(field.Attribute) )
+	{
+		result += field.Attribute + " ";
+	}
+	if ( string.Equals ( field.Type.Name, "void", StringComparison.InvariantCultureIgnoreCase ) )
+	{
+		type = "IntPtr";
+		result += "IntPtr";
+	}
+	else
+	{
+		type = field.Type.FinalTypeName();
+		if ( field.IsPointer && !(field.Attribute != null && (field.Attribute.Contains("out") || field.Attribute.Contains("ref"))) )
+		{
+			type += "*";
+		}
+		result += type;
+	}
+	return result;
+}
+
+protected void WriteStructHandle(SpecStruct info)
+{
+	string type = info.TypeHandle ? "IntPtr" : "ulong";
+	string typeEmpty = info.TypeHandle ? "IntPtr.Zero" : "0";
+#>
+// <#= info.Name #>
+[DebuggerDisplay ( "{ToString()}" )]
+public unsafe partial struct <#= info.MapName #> : IEquatable<<#= info.MapName #>>
+{
+	private <#= type #> handle;
+
+	public static readonly <#= info.MapName #> Zero;
+
+	public <#= info.MapName #>(<#= type #> value)
+	{
+		handle = value;
+	}
+
+	public bool IsZero { get { return handle == <#= typeEmpty #>; } }
+	
+	public bool Equals(<#= info.MapName #> other)
+	{
+		return other.handle == handle;
+	}
+	public override bool Equals(object obj)
+	{
+		return obj is <#= info.MapName #> && ((<#= info.MapName #>)obj).handle == handle;
+	}
+	public override int GetHashCode()
+	{
+		return handle.GetHashCode ();
+	}
+	public override string ToString()
+	{
+		return handle.ToString (<#= info.TypeHandle ? "" : "CultureInfo.InvariantCulture" #>);
+	}
+	
+	public static bool operator ==(<#= info.MapName #> value1, <#= info.MapName #> value2)
+	{
+		return value1.handle == value2.handle;
+	}
+	public static bool operator !=(<#= info.MapName #> value1, <#= info.MapName #> value2)
+	{
+		return value1.handle != value2.handle;
+	}
+	public static explicit operator <#= type #>(<#= info.MapName #> value)
+	{
+		return value.handle;
+	}
+	public static explicit operator <#= info.MapName #>(<#= type #> value)
+	{
+		return new <#= info.MapName #> (value);
+	}
+}
+<#+
+}
+#>

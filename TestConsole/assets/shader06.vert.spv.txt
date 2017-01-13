@@ -1,0 +1,11 @@
+shader06.vert
+Warning, version 450 is not yet complete; most version-specific features are present, but some are missing.
+
+Uniform reflection:
+
+Uniform block reflection:
+
+Vertex attribute reflection:
+i_Position: offset 0, type 8b52, size 0, index 0, binding -1
+i_Texcoord: offset 0, type 8b50, size 0, index 0, binding -1
+

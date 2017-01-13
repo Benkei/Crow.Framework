@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <Map type="^(Display|VisualID|Window|ANativeWindow|MirConnection|MirSurface|wl_display|wl_surface|HINSTANCE|HWND|xcb_connection_t|xcb_visualid_t|xcb_window_t|HANDLE)"
+       map-type="IntPtr"/>
+
+  <!-- todo create mapping -->
+  <Map type="^(SECURITY_ATTRIBUTES)"
+       map-type="IntPtr"/>
+
+  <Map type="^(void)"
+       map-type="IntPtr"/>
+  <Map type="^(VK_DEFINE_HANDLE)"
+       type-handle="true"/>
+  <Map type="^(VK_DEFINE_NON_DISPATCHABLE_HANDLE)"
+       type-handle64="true"/>
+  <Map type="^float"
+       map-type="float"/>
+  <Map type="^(char|uint8_t)"
+       map-type="byte"/>
+  <Map type="^(uint32_t|VkSampleMask|VkFlags|DWORD)"
+       map-type="uint"/>
+  <Map type="^(VkBool32)"
+       map-type="Boolean32"/>
+  <Map type="^(uint64_t|VkDeviceSize)"
+       map-type="ulong"/>
+  <Map type="^(int32_t|size_t)"
+       map-type="int"/>
+
+  <!--<Map type="^PFN_vk(.*)(EXT)"
+       map-name="$1Ext" map-type="IntPtr"/>-->
+  <Map type="^PFN_vk(.*)"
+       map-name="$1" map-type="IntPtr"/>
+  <!--<Map type="^Vk(.*)KHR$"
+       map-name="$1Khr"/>
+  <Map type="^Vk(.*)EXT$"
+       map-name="$1Ext"/>-->
+  <Map type="^Vk(.*)"
+       map-name="$1"/>
+
+  <!--<Map struct="^Vk(.*)(KHR)$"
+       map-name="$1Khr" namespace="Crow.Graphics.Vulkan" file="Vk.Khr.cs"/>
+  <Map struct="^Vk(.*)(EXT)$"
+       map-name="$1Ext" namespace="Crow.Graphics.Vulkan" file="Vk.Ext.cs"/>
+  <Map struct="^Vk(.*)(AMD)$"
+       map-name="$1Amd" namespace="Crow.Graphics.Vulkan" file="Vk.Amd.cs"/>
+  <Map struct="^Vk(.*)(NV|NVX)$"
+       map-name="$1Nv" namespace="Crow.Graphics.Vulkan" file="Vk.Nv.cs"/>-->
+  <Map struct="^Vk(.*)"
+       map-name="$1" namespace="Crow.Graphics.Vulkan" file="Vk.cs"/>
+
+  <!--<Map enum="^Vk(.*)(KHR)"
+       map-name="$1Khr" namespace="Crow.Graphics.Vulkan" file="Vk.Khr.cs"/>
+  <Map enum="^Vk(.*)(EXT)"
+       map-name="$1Ext" namespace="Crow.Graphics.Vulkan" file="Vk.Ext.cs"/>
+  <Map enum="^Vk(.*)(AMD)"
+       map-name="$1Amd" namespace="Crow.Graphics.Vulkan" file="Vk.Amd.cs"/>
+  <Map enum="^Vk(.*)(NV|NVX)"
+       map-name="$1Nv" namespace="Crow.Graphics.Vulkan" file="Vk.Nv.cs"/>-->
+  <Map enum="^Vk(.*)"
+       map-name="$1" namespace="Crow.Graphics.Vulkan" file="Vk.cs"/>
+  
+  <!--<Map enum="(.*)FlagBits(.*)"
+       map-name="$1Flags$2"/>-->
+
+  <Map enum="API Constants"
+       map-name="Constant" class="true"/>
+
+  <!--<Map enum-item="API Constants::(.*)"
+       visibility="public const" map-type="int"/>-->
+
+  <Map enum-item="^VK_IMAGE_TYPE(.*)"
+       map-name="$1"/>
+
+  <Map enum-item="^VK_IMAGE_VIEW_TYPE(.*)"
+       map-name="$1"/>
+
+  <Map enum-item="^VK_QUERY_RESULT(.*)"
+       map-name="$1"/>
+
+  <Map enum-item="^VK_SAMPLE_COUNT(.*)"
+       map-name="$1"/>
+
+  <Map enum-item="^(VK_IMAGE_LAYOUT_|VK_ATTACHMENT_LOAD_OP_|VK_ATTACHMENT_STORE_OP_|VK_IMAGE_TILING_|VK_COMMAND_BUFFER_LEVEL_|VK_COMPONENT_SWIZZLE_|VK_DESCRIPTOR_TYPE_|VK_QUERY_TYPE_|VK_BORDER_COLOR_|VK_PIPELINE_BIND_POINT_)(.*)"
+       map-name="$2"/>
+
+  <Map enum-item="^(VK_PIPELINE_CACHE_HEADER_VERSION_|VK_PRIMITIVE_TOPOLOGY_|VK_SHARING_MODE_|VK_INDEX_TYPE_|VK_FILTER_|VK_SAMPLER_MIPMAP_MODE_|VK_SAMPLER_ADDRESS_MODE_|VK_COMPARE_OP_|VK_POLYGON_MODE_|VK_CULL_MODE_|VK_FRONT_FACE_|VK_BLEND_FACTOR_|VK_BLEND_OP_|VK_STENCIL_OP_)(.*)"
+       map-name="$2"/>
+
+  <Map enum-item="^(VK_LOGIC_OP_|VK_INTERNAL_ALLOCATION_TYPE_|VK_SYSTEM_ALLOCATION_SCOPE_|VK_PHYSICAL_DEVICE_TYPE_|VK_VERTEX_INPUT_RATE_|VK_FORMAT_|VK_STRUCTURE_TYPE_|VK_SUBPASS_CONTENTS_|VK_DYNAMIC_STATE_|VK_QUEUE_|VK_MEMORY_PROPERTY_|VK_MEMORY_HEAP_|VK_ACCESS_|VK_BUFFER_USAGE_|VK_BUFFER_CREATE_|VK_SHADER_STAGE_|VK_IMAGE_USAGE_)(.*)"
+       map-name="$2"/>
+
+  <Map enum-item="^(VK_IMAGE_CREATE_|VK_PIPELINE_CREATE_|VK_COLOR_COMPONENT_|VK_FENCE_CREATE_|VK_FORMAT_FEATURE_|VK_QUERY_CONTROL_|VK_COMMAND_BUFFER_USAGE_|VK_QUERY_PIPELINE_STATISTIC_|VK_IMAGE_ASPECT_|VK_SPARSE_IMAGE_FORMAT_|VK_SPARSE_MEMORY_BIND_|VK_PIPELINE_STAGE_|VK_COMMAND_POOL_CREATE_|VK_COMMAND_POOL_RESET_|VK_COMMAND_BUFFER_RESET_)(.*)"
+       map-name="$2"/>
+
+  <Map enum-item="^VK_DEBUG_REPORT_ERROR_BIT_EXT"
+       map-name="ERROR_EXT"/>
+
+  <Map enum-item="^VK_STENCIL_FRONT_AND_BACK"
+       map-name="FRONT_AND_BACK"/>
+
+  <Map enum-item="^(VK_ATTACHMENT_DESCRIPTION_|VK_STENCIL_FACE_|VK_DESCRIPTOR_POOL_CREATE_|VK_DEPENDENCY_|VK_PRESENT_MODE_|VK_COLOR_SPACE_|VK_DISPLAY_PLANE_ALPHA_|VK_COMPOSITE_ALPHA_|VK_SURFACE_TRANSFORM_|VK_DEBUG_REPORT_OBJECT_TYPE_|VK_DEBUG_REPORT_ERROR_|VK_RASTERIZATION_ORDER_)(.*)"
+       map-name="$2"/>
+
+  <Map enum-item="^VK_DEBUG_REPORT_(.*)"
+       map-name="$1"/>
+
+  <!--<Map enum-item="(.*)(_KHR_EXT|_BIT_EXT|_BIT_KHR)$"
+       map-name="$1"/>
+
+  <Map enum-item="(.*)(_BIT|_EXT|_KHR|_AMD)$"
+       map-name="$1"/>
+
+  <Map enum-item="(.*)_BIT(_EXT|_KHR)?$"
+       map-name="$1$2"/>-->
+
+  <Map enum-item="^VK_(.*)"
+       map-name="$1"/>
+
+  <Map enum-item="(.*)"
+       map-name="$1" camelcase="true"/>
+
+  <!-- mask invalid enum names -->
+  <Map enum-item="^(\d.*)"
+       map-name="_$1"/>
+
+  <!--<Map command="(.*)(KHR|EXT|AMD|NV)$"
+       map-name="$1"/>-->
+
+  <Map command="^PFN_vk(.*)"
+       map-name="$1Callback"/>
+
+  <Map command="^vk(.*)"
+       map-name="$1"/>
+
+  <Map command=".*"
+       group="Vulkan"/>
+
+  <Map param="^p[A-Z].*Info$"
+       attribute="ref"/>
+
+  <Map param="^pBindInfo$"
+       attribute=""/>
+
+  <Map param="^(vkCmd.*|vkQueueSubmit)$::^(pRenderPassBegin)$"
+       attribute="ref"/>
+
+  <Map param="^(vkGet|vkCreate|vkAllocate|vkMapMemory).*::^(pQueue|pMemoryRequirements|pMemoryProperties|pImageFormatProperties|pFormatProperties|pFeatures|pInstance|pDevice|pMemory|ppData|pCommittedMemoryInBytes|pFence|pSemaphore|pEvent|pQueryPool|pBuffer|pView|pImage|pSubresource|pLayout|pShaderModule|pPipelineCache|pPipelines|pPipelineLayout|pSampler|pSetLayout|pDescriptorPool|pFramebuffer|pRenderPass|pGranularity|pCommandPool)$"
+       attribute="out"/>
+
+  <!-- extensions -->
+  <Map param="^(vkGet|vkCreate|vkAcquire).*::^(pSwapchain|pSurfaceCapabilities|pSupported|pImageIndex|pSurface|pCallback)$"
+       attribute="out"/>
+
+  <Map param="^(vkGetPhysicalDeviceProperties)$::^pProperties$"
+       attribute="out"/>
+
+  <Map param="^(vkDestroy.*|vkFreeMemory)$::^pAllocator$"
+       optional="true"/>
+
+  <Map param="^(ref|in|params|object|string|event|base)$" field="^(ref|in|params|object|string|event|base)$"
+       map-name="@$1"/>
+  
+  <Map field="VkImageBlit::srcOffsets"
+       map-type="int" fixed-size="6"/>
+
+  <Map field="VkImageBlit::dstOffsets"
+       map-type="int" fixed-size="6"/>
+
+  <!-- (int + int)*32 -->
+  <Map field="VkPhysicalDeviceMemoryProperties::memoryTypes"
+       map-type="int" fixed-size="64"/>
+  <!-- (ulong + int)*16 -->
+  <Map field="VkPhysicalDeviceMemoryProperties::memoryHeaps"
+       map-type="int" fixed-size="48"/>
+
+  <Map field=".*Version$"
+       map-type="Version"/>
+
+  <Map field="VkPhysicalDeviceProperties::^driverVersion$"
+       map-type="uint"/>
+  <Map field="VkExtensionProperties::^specVersion$"
+       map-type="uint"/>
+  
+  <Map extension="^VK_(.*)"
+       map-name="$1" camelcase="true"/>
+
+  <Map feature=".*"
+       map-name="Vk" namespace="Crow.Graphics.Vulkan" file="Vk.cs"/>
+
+  <Map field="(.*)SPEC_VERSION$"
+       map-name="SPEC_VERSION"/>
+
+  <Map field="(.*)EXTENSION_NAME$"
+       map-name="EXTENSION_NAME"/>
+  
+  <Map field="(.*)(d|D)st(.*)" param="(.*)(d|D)st(.*)" enum-item="(.*)(d|D)st(.*)"
+       map-name="$1$2estination$3"/>
+  <Map field="(.*)(s|S)rc(.*)" param="(.*)(s|S)rc(.*)" enum-item="(.*)(s|S)rc(.*)"
+       map-name="$1$2ource$3"/>
+  <Map field="(.*)Op$" enum="(.*)Op$" enum-item="(.*)Op$"
+       map-name="$1Operation"/>
+  <Map field="logicOpEnable"
+       map-name="logicOperationEnable"/>
+
+</Mappings>
