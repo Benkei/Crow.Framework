@@ -11,41 +11,42 @@ namespace OpenGlSpecGen
 {
 	class Program
 	{
+		// OpenGlSpecGen.exe "gl.xml" "gl_mapping.xml" "gl" "core" "4.5" "../Gen"
+
 		static void Main(string[] args)
 		{
-			// xml khronos file
-			// xml mapping file
-			// api name
+			// xml khronos file (gl.xml)
+			// xml mapping file (gl_mapping.xml)
+			// api name (gl|gles1|gles2)
 			// profile name (common|core|compatibility)
-			// version max
+			// version max (4.5)
 			// output path
 
-			if ( args.Length < 5 )
+			string inputXml = "gl.xml";
+			string mappingXml = "mapping.xml";
+			string api = "gl";
+			string profile = "core";
+			float versionMax = 1.0f;
+			string output = "";
+
+			if ( args.Length >= 5 )
 			{
-				return;
+				inputXml = args[0];
+				mappingXml = args[1];
+				api = args[2];
+				profile = args[3];
+				versionMax = float.Parse ( args[4], CultureInfo.InvariantCulture );
+				output = args[5];
 			}
-			if ( !File.Exists ( args[0] ) )
-			{
+			if ( !File.Exists ( inputXml ) || !File.Exists ( mappingXml ) )
 				return;
-			}
-			if ( !File.Exists ( args[1] ) )
-			{
-				return;
-			}
 
 			//Debugger.Launch ();
 
 			var watch = Stopwatch.StartNew ();
 
-			var khronosXml = args[0];
-			var mappingXml = args[1];
-			var api = args[2];
-			var profile = args[3];
-			var version = float.Parse ( args[4], CultureInfo.InvariantCulture );
-			var output = args[5];
-
 			var registry = new SpecRegistry ();
-			using ( var stream = new FileStream ( khronosXml, FileMode.Open, FileAccess.Read,
+			using ( var stream = new FileStream ( inputXml, FileMode.Open, FileAccess.Read,
 				FileShare.Read, 4096, FileOptions.SequentialScan ) )
 			{
 				registry.Read ( stream );
@@ -61,7 +62,7 @@ namespace OpenGlSpecGen
 			Mapper mapper = new Mapper ( config );
 
 			var interfaces = (from item in registry.Features.Concat ( registry.Extensions )
-									where (item.Api == null || item.Api == api) && (item.Supported == null || item.Supported.IsMatch ( api )) && item.Number <= version
+									where (item.Api == null || item.Api == api) && (item.Supported == null || item.Supported.IsMatch ( api )) && item.Number <= versionMax
 									select mapper.InterfaceMapping ( item ))
 									.ToArray ();
 
@@ -201,14 +202,15 @@ namespace OpenGlSpecGen
 									  select item;
 			foreach ( var item in _requireEnums )
 			{
-				EnumGroup enumValue = new EnumGroup {
+				EnumGroup enumValue = new EnumGroup
+				{
 					Group = item.Group,
 					List = item.List,
 					Element = _enums[item.Interface.Name]
 				};
 				requireEnums.Add ( enumValue );
 			}
-			
+
 			var interCmds = from item in commands
 								 group item by new
 								 {
