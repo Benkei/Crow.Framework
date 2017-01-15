@@ -132,6 +132,39 @@ namespace OpenGl
 				resolver.LoadHandle ("glBlendFuncSeparateIndexedAMD", out BlendFuncSeparateIndexed);
 			}
 		}
+		public partial class AmdGpuShaderHalfFloat
+		{
+			public enum All
+			{
+				// GL_FLOAT16_NV = 0x8FF8
+				Float16 = unchecked((int)36856),
+				// GL_FLOAT16_VEC2_NV = 0x8FF9
+				Float16Vec2 = unchecked((int)36857),
+				// GL_FLOAT16_VEC3_NV = 0x8FFA
+				Float16Vec3 = unchecked((int)36858),
+				// GL_FLOAT16_VEC4_NV = 0x8FFB
+				Float16Vec4 = unchecked((int)36859),
+				// GL_FLOAT16_MAT2_AMD = 0x91C5
+				Float16Mat2 = unchecked((int)37317),
+				// GL_FLOAT16_MAT3_AMD = 0x91C6
+				Float16Mat3 = unchecked((int)37318),
+				// GL_FLOAT16_MAT4_AMD = 0x91C7
+				Float16Mat4 = unchecked((int)37319),
+				// GL_FLOAT16_MAT2x3_AMD = 0x91C8
+				Float16Mat2x3 = unchecked((int)37320),
+				// GL_FLOAT16_MAT2x4_AMD = 0x91C9
+				Float16Mat2x4 = unchecked((int)37321),
+				// GL_FLOAT16_MAT3x2_AMD = 0x91CA
+				Float16Mat3x2 = unchecked((int)37322),
+				// GL_FLOAT16_MAT3x4_AMD = 0x91CB
+				Float16Mat3x4 = unchecked((int)37323),
+				// GL_FLOAT16_MAT4x2_AMD = 0x91CC
+				Float16Mat4x2 = unchecked((int)37324),
+				// GL_FLOAT16_MAT4x3_AMD = 0x91CD
+				Float16Mat4x3 = unchecked((int)37325),
+			}
+			public const string NAME_STRING = "GL_AMD_gpu_shader_half_float";
+		}
 		public partial class AmdGpuShaderInt64
 		{
 			public enum All
@@ -184,14 +217,6 @@ namespace OpenGl
 				UnsignedInt64Vec3 = unchecked((int)36854),
 				// GL_UNSIGNED_INT64_VEC4_NV = 0x8FF7
 				UnsignedInt64Vec4 = unchecked((int)36855),
-				// GL_FLOAT16_NV = 0x8FF8
-				Float16 = unchecked((int)36856),
-				// GL_FLOAT16_VEC2_NV = 0x8FF9
-				Float16Vec2 = unchecked((int)36857),
-				// GL_FLOAT16_VEC3_NV = 0x8FFA
-				Float16Vec3 = unchecked((int)36858),
-				// GL_FLOAT16_VEC4_NV = 0x8FFB
-				Float16Vec4 = unchecked((int)36859),
 			}
 			public const string NAME_STRING = "GL_AMD_gpu_shader_int64";
 			#region command delegates
@@ -734,7 +759,7 @@ namespace OpenGl
 			#region command delegates
 			// void glStencilOpValueAMD (GLenum face, GLuint value)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void StencilOpValueDelegate (StencilFaceDirection face, System.UInt32 value);
+			public delegate void StencilOpValueDelegate (System.UInt32 face, System.UInt32 value);
 			#endregion // command delegates
 			#region commands
 			// void glStencilOpValueAMD (GLenum face, GLuint value)

@@ -279,6 +279,33 @@ namespace OpenGl
 			}
 			public const string NAME_STRING = "GL_NV_blend_equation_advanced_coherent";
 		}
+		public partial class NvClipSpaceWScaling
+		{
+			public enum All
+			{
+				// GL_VIEWPORT_POSITION_W_SCALE_NV = 0x937C
+				ViewportPositionWScale = unchecked((int)37756),
+				// GL_VIEWPORT_POSITION_W_SCALE_X_COEFF_NV = 0x937D
+				ViewportPositionWScaleXCoeff = unchecked((int)37757),
+				// GL_VIEWPORT_POSITION_W_SCALE_Y_COEFF_NV = 0x937E
+				ViewportPositionWScaleYCoeff = unchecked((int)37758),
+			}
+			public const string NAME_STRING = "GL_NV_clip_space_w_scaling";
+			#region command delegates
+			// void glViewportPositionWScaleNV (GLuint index, GLfloat xcoeff, GLfloat ycoeff)
+			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
+			public delegate void ViewportPositionWScaleDelegate (System.UInt32 index, System.Single xcoeff, System.Single ycoeff);
+			#endregion // command delegates
+			#region commands
+			// void glViewportPositionWScaleNV (GLuint index, GLfloat xcoeff, GLfloat ycoeff)
+			public readonly ViewportPositionWScaleDelegate ViewportPositionWScale;
+			#endregion // commands
+			public NvClipSpaceWScaling (IHandleResolver resolver)
+			{
+				if (resolver == null) throw new ArgumentNullException ("resolver");
+				resolver.LoadHandle ("glViewportPositionWScaleNV", out ViewportPositionWScale);
+			}
+		}
 		public partial class NvCommandList
 		{
 			public enum All
@@ -534,6 +561,33 @@ namespace OpenGl
 			{
 				if (resolver == null) throw new ArgumentNullException ("resolver");
 				resolver.LoadHandle ("glConservativeRasterParameterfNV", out ConservativeRasterParameterf);
+			}
+		}
+		public partial class NvConservativeRasterPreSnapTriangles
+		{
+			public enum All
+			{
+				// GL_CONSERVATIVE_RASTER_MODE_NV = 0x954D
+				ConservativeRasterMode = unchecked((int)38221),
+				// GL_CONSERVATIVE_RASTER_MODE_POST_SNAP_NV = 0x954E
+				ConservativeRasterModePostSnap = unchecked((int)38222),
+				// GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_TRIANGLES_NV = 0x954F
+				ConservativeRasterModePreSnapTriangles = unchecked((int)38223),
+			}
+			public const string NAME_STRING = "GL_NV_conservative_raster_pre_snap_triangles";
+			#region command delegates
+			// void glConservativeRasterParameteriNV (GLenum pname, GLint param)
+			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
+			public delegate void ConservativeRasterParameteriDelegate (System.UInt32 pname, System.Int32 param);
+			#endregion // command delegates
+			#region commands
+			// void glConservativeRasterParameteriNV (GLenum pname, GLint param)
+			public readonly ConservativeRasterParameteriDelegate ConservativeRasterParameteri;
+			#endregion // commands
+			public NvConservativeRasterPreSnapTriangles (IHandleResolver resolver)
+			{
+				if (resolver == null) throw new ArgumentNullException ("resolver");
+				resolver.LoadHandle ("glConservativeRasterParameteriNV", out ConservativeRasterParameteri);
 			}
 		}
 		public partial class NvCopyDepthToColor
@@ -1357,28 +1411,28 @@ namespace OpenGl
 			public delegate void FogCoordhvDelegate (IntPtr fog);
 			// void glMultiTexCoord1hNV (GLenum target, GLhalfNV s)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1hDelegate (TextureUnit target, System.UInt16 s);
+			public delegate void MultiTexCoord1hDelegate (System.UInt32 target, System.UInt16 s);
 			// void glMultiTexCoord1hvNV (GLenum target, GLhalfNV* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1hvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord1hvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord2hNV (GLenum target, GLhalfNV s, GLhalfNV t)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2hDelegate (TextureUnit target, System.UInt16 s, System.UInt16 t);
+			public delegate void MultiTexCoord2hDelegate (System.UInt32 target, System.UInt16 s, System.UInt16 t);
 			// void glMultiTexCoord2hvNV (GLenum target, GLhalfNV* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2hvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord2hvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord3hNV (GLenum target, GLhalfNV s, GLhalfNV t, GLhalfNV r)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3hDelegate (TextureUnit target, System.UInt16 s, System.UInt16 t, System.UInt16 r);
+			public delegate void MultiTexCoord3hDelegate (System.UInt32 target, System.UInt16 s, System.UInt16 t, System.UInt16 r);
 			// void glMultiTexCoord3hvNV (GLenum target, GLhalfNV* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3hvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord3hvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord4hNV (GLenum target, GLhalfNV s, GLhalfNV t, GLhalfNV r, GLhalfNV q)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4hDelegate (TextureUnit target, System.UInt16 s, System.UInt16 t, System.UInt16 r, System.UInt16 q);
+			public delegate void MultiTexCoord4hDelegate (System.UInt32 target, System.UInt16 s, System.UInt16 t, System.UInt16 r, System.UInt16 q);
 			// void glMultiTexCoord4hvNV (GLenum target, GLhalfNV* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4hvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord4hvDelegate (System.UInt32 target, IntPtr v);
 			// void glNormal3hNV (GLhalfNV nx, GLhalfNV ny, GLhalfNV nz)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void Normal3hDelegate (System.UInt16 nx, System.UInt16 ny, System.UInt16 nz);
@@ -2850,6 +2904,15 @@ namespace OpenGl
 				resolver.LoadHandle ("glCombinerStageParameterfvNV", out CombinerStageParameterfv);
 				resolver.LoadHandle ("glGetCombinerStageParameterfvNV", out GetCombinerStageParameterfv);
 			}
+		}
+		public partial class NvRobustnessVideoMemoryPurge
+		{
+			public enum All
+			{
+				// GL_PURGED_CONTEXT_RESET_NV = 0x92BB
+				PurgedContextReset = unchecked((int)37563),
+			}
+			public const string NAME_STRING = "GL_NV_robustness_video_memory_purge";
 		}
 		public partial class NvSampleLocations
 		{

@@ -576,7 +576,7 @@ namespace OpenGl
 			public delegate void StencilFuncSeparateDelegate (StencilFunction frontfunc, StencilFunction backfunc, System.Int32 @ref, System.UInt32 mask);
 			// void glStencilOpSeparateATI (GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void StencilOpSeparateDelegate (StencilFaceDirection face, StencilOp sfail, StencilOp dpfail, StencilOp dppass);
+			public delegate void StencilOpSeparateDelegate (System.UInt32 face, StencilOp sfail, StencilOp dpfail, StencilOp dppass);
 			#endregion // command delegates
 			#region commands
 			// void glStencilFuncSeparateATI (GLenum frontfunc, GLenum backfunc, GLint ref, GLuint mask)

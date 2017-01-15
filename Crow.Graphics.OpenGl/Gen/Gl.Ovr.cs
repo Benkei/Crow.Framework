@@ -17,6 +17,8 @@ namespace OpenGl
 				MaxViews = unchecked((int)38449),
 				// GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR = 0x9632
 				FramebufferAttachmentTextureBaseViewIndex = unchecked((int)38450),
+				// GL_FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR = 0x9633
+				FramebufferIncompleteViewTargets = unchecked((int)38451),
 			}
 			public const string NAME_STRING = "GL_OVR_multiview";
 			#region command delegates

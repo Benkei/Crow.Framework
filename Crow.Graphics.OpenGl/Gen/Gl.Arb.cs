@@ -1331,106 +1331,106 @@ namespace OpenGl
 			#region command delegates
 			// void glActiveTextureARB (GLenum texture)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void ActiveTextureDelegate (TextureUnit texture);
+			public delegate void ActiveTextureDelegate (System.UInt32 texture);
 			// void glClientActiveTextureARB (GLenum texture)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void ClientActiveTextureDelegate (TextureUnit texture);
+			public delegate void ClientActiveTextureDelegate (System.UInt32 texture);
 			// void glMultiTexCoord1dARB (GLenum target, GLdouble s)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1dDelegate (TextureUnit target, System.Double s);
+			public delegate void MultiTexCoord1dDelegate (System.UInt32 target, System.Double s);
 			// void glMultiTexCoord1dvARB (GLenum target, GLdouble* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1dvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord1dvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord1fARB (GLenum target, GLfloat s)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1fDelegate (TextureUnit target, System.Single s);
+			public delegate void MultiTexCoord1fDelegate (System.UInt32 target, System.Single s);
 			// void glMultiTexCoord1fvARB (GLenum target, GLfloat* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1fvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord1fvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord1iARB (GLenum target, GLint s)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1iDelegate (TextureUnit target, System.Int32 s);
+			public delegate void MultiTexCoord1iDelegate (System.UInt32 target, System.Int32 s);
 			// void glMultiTexCoord1ivARB (GLenum target, GLint* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1ivDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord1ivDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord1sARB (GLenum target, GLshort s)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1sDelegate (TextureUnit target, System.Int16 s);
+			public delegate void MultiTexCoord1sDelegate (System.UInt32 target, System.Int16 s);
 			// void glMultiTexCoord1svARB (GLenum target, GLshort* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord1svDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord1svDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord2dARB (GLenum target, GLdouble s, GLdouble t)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2dDelegate (TextureUnit target, System.Double s, System.Double t);
+			public delegate void MultiTexCoord2dDelegate (System.UInt32 target, System.Double s, System.Double t);
 			// void glMultiTexCoord2dvARB (GLenum target, GLdouble* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2dvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord2dvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord2fARB (GLenum target, GLfloat s, GLfloat t)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2fDelegate (TextureUnit target, System.Single s, System.Single t);
+			public delegate void MultiTexCoord2fDelegate (System.UInt32 target, System.Single s, System.Single t);
 			// void glMultiTexCoord2fvARB (GLenum target, GLfloat* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2fvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord2fvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord2iARB (GLenum target, GLint s, GLint t)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2iDelegate (TextureUnit target, System.Int32 s, System.Int32 t);
+			public delegate void MultiTexCoord2iDelegate (System.UInt32 target, System.Int32 s, System.Int32 t);
 			// void glMultiTexCoord2ivARB (GLenum target, GLint* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2ivDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord2ivDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord2sARB (GLenum target, GLshort s, GLshort t)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2sDelegate (TextureUnit target, System.Int16 s, System.Int16 t);
+			public delegate void MultiTexCoord2sDelegate (System.UInt32 target, System.Int16 s, System.Int16 t);
 			// void glMultiTexCoord2svARB (GLenum target, GLshort* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord2svDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord2svDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord3dARB (GLenum target, GLdouble s, GLdouble t, GLdouble r)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3dDelegate (TextureUnit target, System.Double s, System.Double t, System.Double r);
+			public delegate void MultiTexCoord3dDelegate (System.UInt32 target, System.Double s, System.Double t, System.Double r);
 			// void glMultiTexCoord3dvARB (GLenum target, GLdouble* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3dvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord3dvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord3fARB (GLenum target, GLfloat s, GLfloat t, GLfloat r)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3fDelegate (TextureUnit target, System.Single s, System.Single t, System.Single r);
+			public delegate void MultiTexCoord3fDelegate (System.UInt32 target, System.Single s, System.Single t, System.Single r);
 			// void glMultiTexCoord3fvARB (GLenum target, GLfloat* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3fvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord3fvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord3iARB (GLenum target, GLint s, GLint t, GLint r)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3iDelegate (TextureUnit target, System.Int32 s, System.Int32 t, System.Int32 r);
+			public delegate void MultiTexCoord3iDelegate (System.UInt32 target, System.Int32 s, System.Int32 t, System.Int32 r);
 			// void glMultiTexCoord3ivARB (GLenum target, GLint* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3ivDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord3ivDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord3sARB (GLenum target, GLshort s, GLshort t, GLshort r)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3sDelegate (TextureUnit target, System.Int16 s, System.Int16 t, System.Int16 r);
+			public delegate void MultiTexCoord3sDelegate (System.UInt32 target, System.Int16 s, System.Int16 t, System.Int16 r);
 			// void glMultiTexCoord3svARB (GLenum target, GLshort* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord3svDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord3svDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord4dARB (GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4dDelegate (TextureUnit target, System.Double s, System.Double t, System.Double r, System.Double q);
+			public delegate void MultiTexCoord4dDelegate (System.UInt32 target, System.Double s, System.Double t, System.Double r, System.Double q);
 			// void glMultiTexCoord4dvARB (GLenum target, GLdouble* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4dvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord4dvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord4fARB (GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4fDelegate (TextureUnit target, System.Single s, System.Single t, System.Single r, System.Single q);
+			public delegate void MultiTexCoord4fDelegate (System.UInt32 target, System.Single s, System.Single t, System.Single r, System.Single q);
 			// void glMultiTexCoord4fvARB (GLenum target, GLfloat* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4fvDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord4fvDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord4iARB (GLenum target, GLint s, GLint t, GLint r, GLint q)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4iDelegate (TextureUnit target, System.Int32 s, System.Int32 t, System.Int32 r, System.Int32 q);
+			public delegate void MultiTexCoord4iDelegate (System.UInt32 target, System.Int32 s, System.Int32 t, System.Int32 r, System.Int32 q);
 			// void glMultiTexCoord4ivARB (GLenum target, GLint* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4ivDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord4ivDelegate (System.UInt32 target, IntPtr v);
 			// void glMultiTexCoord4sARB (GLenum target, GLshort s, GLshort t, GLshort r, GLshort q)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4sDelegate (TextureUnit target, System.Int16 s, System.Int16 t, System.Int16 r, System.Int16 q);
+			public delegate void MultiTexCoord4sDelegate (System.UInt32 target, System.Int16 s, System.Int16 t, System.Int16 r, System.Int16 q);
 			// void glMultiTexCoord4svARB (GLenum target, GLshort* v)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoord4svDelegate (TextureUnit target, IntPtr v);
+			public delegate void MultiTexCoord4svDelegate (System.UInt32 target, IntPtr v);
 			#endregion // command delegates
 			#region commands
 			// void glActiveTextureARB (GLenum texture)

@@ -783,7 +783,7 @@ namespace OpenGl
 			#region command delegates
 			// void glBindMultiTextureEXT (GLenum texunit, GLenum target, GLuint texture)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void BindMultiTextureDelegate (TextureUnit texunit, TextureTarget target, System.UInt32 texture);
+			public delegate void BindMultiTextureDelegate (System.UInt32 texunit, TextureTarget target, System.UInt32 texture);
 			// GLenum glCheckNamedFramebufferStatusEXT (GLuint framebuffer, GLenum target)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate System.UInt32 CheckNamedFramebufferStatusDelegate (System.UInt32 framebuffer, System.UInt32 target);
@@ -798,22 +798,22 @@ namespace OpenGl
 			public delegate void ClientAttribDefaultDelegate (ClientAttribMask mask);
 			// void glCompressedMultiTexImage1DEXT (GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CompressedMultiTexImage1DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 border, System.Int32 imageSize, IntPtr bits);
+			public delegate void CompressedMultiTexImage1DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 border, System.Int32 imageSize, IntPtr bits);
 			// void glCompressedMultiTexImage2DEXT (GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CompressedMultiTexImage2DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 height, System.Int32 border, System.Int32 imageSize, IntPtr bits);
+			public delegate void CompressedMultiTexImage2DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 height, System.Int32 border, System.Int32 imageSize, IntPtr bits);
 			// void glCompressedMultiTexImage3DEXT (GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CompressedMultiTexImage3DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 height, System.Int32 depth, System.Int32 border, System.Int32 imageSize, IntPtr bits);
+			public delegate void CompressedMultiTexImage3DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 height, System.Int32 depth, System.Int32 border, System.Int32 imageSize, IntPtr bits);
 			// void glCompressedMultiTexSubImage1DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CompressedMultiTexSubImage1DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 width, PixelFormat format, System.Int32 imageSize, IntPtr bits);
+			public delegate void CompressedMultiTexSubImage1DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 width, PixelFormat format, System.Int32 imageSize, IntPtr bits);
 			// void glCompressedMultiTexSubImage2DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CompressedMultiTexSubImage2DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 width, System.Int32 height, PixelFormat format, System.Int32 imageSize, IntPtr bits);
+			public delegate void CompressedMultiTexSubImage2DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 width, System.Int32 height, PixelFormat format, System.Int32 imageSize, IntPtr bits);
 			// void glCompressedMultiTexSubImage3DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CompressedMultiTexSubImage3DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 width, System.Int32 height, System.Int32 depth, PixelFormat format, System.Int32 imageSize, IntPtr bits);
+			public delegate void CompressedMultiTexSubImage3DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 width, System.Int32 height, System.Int32 depth, PixelFormat format, System.Int32 imageSize, IntPtr bits);
 			// void glCompressedTextureImage1DEXT (GLuint texture, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, void* bits)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void CompressedTextureImage1DDelegate (System.UInt32 texture, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 width, System.Int32 border, System.Int32 imageSize, IntPtr bits);
@@ -834,19 +834,19 @@ namespace OpenGl
 			public delegate void CompressedTextureSubImage3DDelegate (System.UInt32 texture, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 width, System.Int32 height, System.Int32 depth, PixelFormat format, System.Int32 imageSize, IntPtr bits);
 			// void glCopyMultiTexImage1DEXT (GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CopyMultiTexImage1DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 border);
+			public delegate void CopyMultiTexImage1DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 border);
 			// void glCopyMultiTexImage2DEXT (GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CopyMultiTexImage2DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 height, System.Int32 border);
+			public delegate void CopyMultiTexImage2DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 height, System.Int32 border);
 			// void glCopyMultiTexSubImage1DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CopyMultiTexSubImage1DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 x, System.Int32 y, System.Int32 width);
+			public delegate void CopyMultiTexSubImage1DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 x, System.Int32 y, System.Int32 width);
 			// void glCopyMultiTexSubImage2DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CopyMultiTexSubImage2DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 height);
+			public delegate void CopyMultiTexSubImage2DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 height);
 			// void glCopyMultiTexSubImage3DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void CopyMultiTexSubImage3DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 height);
+			public delegate void CopyMultiTexSubImage3DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 height);
 			// void glCopyTextureImage1DEXT (GLuint texture, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void CopyTextureImage1DDelegate (System.UInt32 texture, TextureTarget target, System.Int32 level, System.UInt32 internalformat, System.Int32 x, System.Int32 y, System.Int32 width, System.Int32 border);
@@ -906,7 +906,7 @@ namespace OpenGl
 			public delegate void FramebufferReadBufferDelegate (System.UInt32 framebuffer, ReadBufferMode mode);
 			// void glGenerateMultiTexMipmapEXT (GLenum texunit, GLenum target)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GenerateMultiTexMipmapDelegate (TextureUnit texunit, TextureTarget target);
+			public delegate void GenerateMultiTexMipmapDelegate (System.UInt32 texunit, TextureTarget target);
 			// void glGenerateTextureMipmapEXT (GLuint texture, GLenum target)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void GenerateTextureMipmapDelegate (System.UInt32 texture, TextureTarget target);
@@ -915,7 +915,7 @@ namespace OpenGl
 			public delegate void GetBooleanIndexedvDelegate (System.UInt32 target, System.UInt32 index, Boolean data);
 			// void glGetCompressedMultiTexImageEXT (GLenum texunit, GLenum target, GLint lod, void* img)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetCompressedMultiTexImageDelegate (TextureUnit texunit, TextureTarget target, System.Int32 lod, IntPtr img);
+			public delegate void GetCompressedMultiTexImageDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 lod, IntPtr img);
 			// void glGetCompressedTextureImageEXT (GLuint texture, GLenum target, GLint lod, void* img)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void GetCompressedTextureImageDelegate (System.UInt32 texture, TextureTarget target, System.Int32 lod, IntPtr img);
@@ -939,40 +939,40 @@ namespace OpenGl
 			public delegate void GetIntegerIndexedvDelegate (System.UInt32 target, System.UInt32 index, IntPtr data);
 			// void glGetMultiTexEnvfvEXT (GLenum texunit, GLenum target, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexEnvfvDelegate (TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
+			public delegate void GetMultiTexEnvfvDelegate (System.UInt32 texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
 			// void glGetMultiTexEnvivEXT (GLenum texunit, GLenum target, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexEnvivDelegate (TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
+			public delegate void GetMultiTexEnvivDelegate (System.UInt32 texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
 			// void glGetMultiTexGendvEXT (GLenum texunit, GLenum coord, GLenum pname, GLdouble* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexGendvDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
+			public delegate void GetMultiTexGendvDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
 			// void glGetMultiTexGenfvEXT (GLenum texunit, GLenum coord, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexGenfvDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
+			public delegate void GetMultiTexGenfvDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
 			// void glGetMultiTexGenivEXT (GLenum texunit, GLenum coord, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexGenivDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
+			public delegate void GetMultiTexGenivDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
 			// void glGetMultiTexImageEXT (GLenum texunit, GLenum target, GLint level, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexImageDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void GetMultiTexImageDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glGetMultiTexLevelParameterfvEXT (GLenum texunit, GLenum target, GLint level, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexLevelParameterfvDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, GetTextureParameter pname, IntPtr @params);
+			public delegate void GetMultiTexLevelParameterfvDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, GetTextureParameter pname, IntPtr @params);
 			// void glGetMultiTexLevelParameterivEXT (GLenum texunit, GLenum target, GLint level, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexLevelParameterivDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, GetTextureParameter pname, IntPtr @params);
+			public delegate void GetMultiTexLevelParameterivDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, GetTextureParameter pname, IntPtr @params);
 			// void glGetMultiTexParameterfvEXT (GLenum texunit, GLenum target, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexParameterfvDelegate (TextureUnit texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
+			public delegate void GetMultiTexParameterfvDelegate (System.UInt32 texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
 			// void glGetMultiTexParameterIivEXT (GLenum texunit, GLenum target, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexParameterIivDelegate (TextureUnit texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
+			public delegate void GetMultiTexParameterIivDelegate (System.UInt32 texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
 			// void glGetMultiTexParameterIuivEXT (GLenum texunit, GLenum target, GLenum pname, GLuint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexParameterIuivDelegate (TextureUnit texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
+			public delegate void GetMultiTexParameterIuivDelegate (System.UInt32 texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
 			// void glGetMultiTexParameterivEXT (GLenum texunit, GLenum target, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void GetMultiTexParameterivDelegate (TextureUnit texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
+			public delegate void GetMultiTexParameterivDelegate (System.UInt32 texunit, TextureTarget target, GetTextureParameter pname, IntPtr @params);
 			// void glGetNamedBufferParameterivEXT (GLuint buffer, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void GetNamedBufferParameterivDelegate (System.UInt32 buffer, System.UInt32 pname, IntPtr @params);
@@ -1116,79 +1116,79 @@ namespace OpenGl
 			public delegate void MatrixTranslatefDelegate (MatrixMode mode, System.Single x, System.Single y, System.Single z);
 			// void glMultiTexBufferEXT (GLenum texunit, GLenum target, GLenum internalformat, GLuint buffer)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexBufferDelegate (TextureUnit texunit, TextureTarget target, System.UInt32 internalformat, System.UInt32 buffer);
+			public delegate void MultiTexBufferDelegate (System.UInt32 texunit, TextureTarget target, System.UInt32 internalformat, System.UInt32 buffer);
 			// void glMultiTexCoordPointerEXT (GLenum texunit, GLint size, GLenum type, GLsizei stride, void* pointer)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexCoordPointerDelegate (TextureUnit texunit, System.Int32 size, TexCoordPointerType type, System.Int32 stride, IntPtr pointer);
+			public delegate void MultiTexCoordPointerDelegate (System.UInt32 texunit, System.Int32 size, TexCoordPointerType type, System.Int32 stride, IntPtr pointer);
 			// void glMultiTexEnvfEXT (GLenum texunit, GLenum target, GLenum pname, GLfloat param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexEnvfDelegate (TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, System.Single param);
+			public delegate void MultiTexEnvfDelegate (System.UInt32 texunit, TextureEnvTarget target, TextureEnvParameter pname, System.Single param);
 			// void glMultiTexEnvfvEXT (GLenum texunit, GLenum target, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexEnvfvDelegate (TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
+			public delegate void MultiTexEnvfvDelegate (System.UInt32 texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
 			// void glMultiTexEnviEXT (GLenum texunit, GLenum target, GLenum pname, GLint param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexEnviDelegate (TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, System.Int32 param);
+			public delegate void MultiTexEnviDelegate (System.UInt32 texunit, TextureEnvTarget target, TextureEnvParameter pname, System.Int32 param);
 			// void glMultiTexEnvivEXT (GLenum texunit, GLenum target, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexEnvivDelegate (TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
+			public delegate void MultiTexEnvivDelegate (System.UInt32 texunit, TextureEnvTarget target, TextureEnvParameter pname, IntPtr @params);
 			// void glMultiTexGendEXT (GLenum texunit, GLenum coord, GLenum pname, GLdouble param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexGendDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, System.Double param);
+			public delegate void MultiTexGendDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, System.Double param);
 			// void glMultiTexGendvEXT (GLenum texunit, GLenum coord, GLenum pname, GLdouble* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexGendvDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
+			public delegate void MultiTexGendvDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
 			// void glMultiTexGenfEXT (GLenum texunit, GLenum coord, GLenum pname, GLfloat param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexGenfDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, System.Single param);
+			public delegate void MultiTexGenfDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, System.Single param);
 			// void glMultiTexGenfvEXT (GLenum texunit, GLenum coord, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexGenfvDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
+			public delegate void MultiTexGenfvDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
 			// void glMultiTexGeniEXT (GLenum texunit, GLenum coord, GLenum pname, GLint param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexGeniDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, System.Int32 param);
+			public delegate void MultiTexGeniDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, System.Int32 param);
 			// void glMultiTexGenivEXT (GLenum texunit, GLenum coord, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexGenivDelegate (TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
+			public delegate void MultiTexGenivDelegate (System.UInt32 texunit, TextureCoordName coord, TextureGenParameter pname, IntPtr @params);
 			// void glMultiTexImage1DEXT (GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexImage1DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 internalformat, System.Int32 width, System.Int32 border, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void MultiTexImage1DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 internalformat, System.Int32 width, System.Int32 border, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glMultiTexImage2DEXT (GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexImage2DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 internalformat, System.Int32 width, System.Int32 height, System.Int32 border, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void MultiTexImage2DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 internalformat, System.Int32 width, System.Int32 height, System.Int32 border, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glMultiTexImage3DEXT (GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexImage3DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 internalformat, System.Int32 width, System.Int32 height, System.Int32 depth, System.Int32 border, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void MultiTexImage3DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 internalformat, System.Int32 width, System.Int32 height, System.Int32 depth, System.Int32 border, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glMultiTexParameterfEXT (GLenum texunit, GLenum target, GLenum pname, GLfloat param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexParameterfDelegate (TextureUnit texunit, TextureTarget target, TextureParameterName pname, System.Single param);
+			public delegate void MultiTexParameterfDelegate (System.UInt32 texunit, TextureTarget target, TextureParameterName pname, System.Single param);
 			// void glMultiTexParameterfvEXT (GLenum texunit, GLenum target, GLenum pname, GLfloat* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexParameterfvDelegate (TextureUnit texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
+			public delegate void MultiTexParameterfvDelegate (System.UInt32 texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
 			// void glMultiTexParameteriEXT (GLenum texunit, GLenum target, GLenum pname, GLint param)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexParameteriDelegate (TextureUnit texunit, TextureTarget target, TextureParameterName pname, System.Int32 param);
+			public delegate void MultiTexParameteriDelegate (System.UInt32 texunit, TextureTarget target, TextureParameterName pname, System.Int32 param);
 			// void glMultiTexParameterIivEXT (GLenum texunit, GLenum target, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexParameterIivDelegate (TextureUnit texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
+			public delegate void MultiTexParameterIivDelegate (System.UInt32 texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
 			// void glMultiTexParameterIuivEXT (GLenum texunit, GLenum target, GLenum pname, GLuint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexParameterIuivDelegate (TextureUnit texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
+			public delegate void MultiTexParameterIuivDelegate (System.UInt32 texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
 			// void glMultiTexParameterivEXT (GLenum texunit, GLenum target, GLenum pname, GLint* params)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexParameterivDelegate (TextureUnit texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
+			public delegate void MultiTexParameterivDelegate (System.UInt32 texunit, TextureTarget target, TextureParameterName pname, IntPtr @params);
 			// void glMultiTexRenderbufferEXT (GLenum texunit, GLenum target, GLuint renderbuffer)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexRenderbufferDelegate (TextureUnit texunit, TextureTarget target, System.UInt32 renderbuffer);
+			public delegate void MultiTexRenderbufferDelegate (System.UInt32 texunit, TextureTarget target, System.UInt32 renderbuffer);
 			// void glMultiTexSubImage1DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexSubImage1DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 width, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void MultiTexSubImage1DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 width, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glMultiTexSubImage2DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexSubImage2DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 width, System.Int32 height, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void MultiTexSubImage2DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 width, System.Int32 height, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glMultiTexSubImage3DEXT (GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void* pixels)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void MultiTexSubImage3DDelegate (TextureUnit texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 width, System.Int32 height, System.Int32 depth, PixelFormat format, PixelType type, IntPtr pixels);
+			public delegate void MultiTexSubImage3DDelegate (System.UInt32 texunit, TextureTarget target, System.Int32 level, System.Int32 xoffset, System.Int32 yoffset, System.Int32 zoffset, System.Int32 width, System.Int32 height, System.Int32 depth, PixelFormat format, PixelType type, IntPtr pixels);
 			// void glNamedBufferDataEXT (GLuint buffer, GLsizeiptr size, void* data, GLenum usage)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void NamedBufferDataDelegate (System.UInt32 buffer, System.IntPtr size, IntPtr data, System.UInt32 usage);
@@ -3983,7 +3983,7 @@ namespace OpenGl
 			#region command delegates
 			// void glActiveStencilFaceEXT (GLenum face)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate void ActiveStencilFaceDelegate (StencilFaceDirection face);
+			public delegate void ActiveStencilFaceDelegate (System.UInt32 face);
 			#endregion // command delegates
 			#region commands
 			// void glActiveStencilFaceEXT (GLenum face)
@@ -5350,10 +5350,10 @@ namespace OpenGl
 			public delegate System.UInt32 BindParameterDelegate (System.UInt32 value);
 			// GLuint glBindTexGenParameterEXT (GLenum unit, GLenum coord, GLenum value)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate System.UInt32 BindTexGenParameterDelegate (TextureUnit unit, TextureCoordName coord, TextureGenParameter value);
+			public delegate System.UInt32 BindTexGenParameterDelegate (System.UInt32 unit, TextureCoordName coord, TextureGenParameter value);
 			// GLuint glBindTextureUnitParameterEXT (GLenum unit, GLenum value)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-			public delegate System.UInt32 BindTextureUnitParameterDelegate (TextureUnit unit, System.UInt32 value);
+			public delegate System.UInt32 BindTextureUnitParameterDelegate (System.UInt32 unit, System.UInt32 value);
 			// void glBindVertexShaderEXT (GLuint id)
 			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 			public delegate void BindVertexShaderDelegate (System.UInt32 id);
@@ -5653,6 +5653,39 @@ namespace OpenGl
 				resolver.LoadHandle ("glVertexWeightfEXT", out VertexWeightf);
 				resolver.LoadHandle ("glVertexWeightfvEXT", out VertexWeightfv);
 				resolver.LoadHandle ("glVertexWeightPointerEXT", out VertexWeightPointer);
+			}
+		}
+		public partial class ExtWindowRectangles
+		{
+			public enum All
+			{
+				// GL_INCLUSIVE_EXT = 0x8F10
+				Inclusive = unchecked((int)36624),
+				// GL_EXCLUSIVE_EXT = 0x8F11
+				Exclusive = unchecked((int)36625),
+				// GL_WINDOW_RECTANGLE_EXT = 0x8F12
+				WindowRectangle = unchecked((int)36626),
+				// GL_WINDOW_RECTANGLE_MODE_EXT = 0x8F13
+				WindowRectangleMode = unchecked((int)36627),
+				// GL_MAX_WINDOW_RECTANGLES_EXT = 0x8F14
+				MaxWindowRectangles = unchecked((int)36628),
+				// GL_NUM_WINDOW_RECTANGLES_EXT = 0x8F15
+				NumWindowRectangles = unchecked((int)36629),
+			}
+			public const string NAME_STRING = "GL_EXT_window_rectangles";
+			#region command delegates
+			// void glWindowRectanglesEXT (GLenum mode, GLsizei count, GLint* box)
+			[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
+			public delegate void WindowRectanglesDelegate (System.UInt32 mode, System.Int32 count, IntPtr box);
+			#endregion // command delegates
+			#region commands
+			// void glWindowRectanglesEXT (GLenum mode, GLsizei count, GLint* box)
+			public readonly WindowRectanglesDelegate WindowRectangles;
+			#endregion // commands
+			public ExtWindowRectangles (IHandleResolver resolver)
+			{
+				if (resolver == null) throw new ArgumentNullException ("resolver");
+				resolver.LoadHandle ("glWindowRectanglesEXT", out WindowRectangles);
 			}
 		}
 		public partial class ExtX11SyncObject

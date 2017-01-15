@@ -1829,15 +1829,6 @@ namespace OpenGl
 		// GL_AUX3 = 0x40C
 		Aux3 = unchecked((int)1036),
 	}
-	public enum StencilFaceDirection
-	{
-		// GL_FRONT = 0x404
-		Front = unchecked((int)1028),
-		// GL_BACK = 0x405
-		Back = unchecked((int)1029),
-		// GL_FRONT_AND_BACK = 0x408
-		FrontAndBack = unchecked((int)1032),
-	}
 	public enum StencilFunction
 	{
 		// GL_NEVER = 0x200
@@ -2036,105 +2027,6 @@ namespace OpenGl
 		// GL_TEXTURE_MAX_LEVEL = 0x813D
 		// GL_TEXTURE_MAX_LEVEL_SGIS = 0x813D
 		TextureMaxLevel = unchecked((int)33085),
-	}
-	public enum TextureUnit
-	{
-		// GL_TEXTURE0 = 0x84C0
-		// GL_TEXTURE0_ARB = 0x84C0
-		Texture0 = unchecked((int)33984),
-		// GL_TEXTURE1 = 0x84C1
-		// GL_TEXTURE1_ARB = 0x84C1
-		Texture1 = unchecked((int)33985),
-		// GL_TEXTURE2 = 0x84C2
-		// GL_TEXTURE2_ARB = 0x84C2
-		Texture2 = unchecked((int)33986),
-		// GL_TEXTURE3 = 0x84C3
-		// GL_TEXTURE3_ARB = 0x84C3
-		Texture3 = unchecked((int)33987),
-		// GL_TEXTURE4 = 0x84C4
-		// GL_TEXTURE4_ARB = 0x84C4
-		Texture4 = unchecked((int)33988),
-		// GL_TEXTURE5 = 0x84C5
-		// GL_TEXTURE5_ARB = 0x84C5
-		Texture5 = unchecked((int)33989),
-		// GL_TEXTURE6 = 0x84C6
-		// GL_TEXTURE6_ARB = 0x84C6
-		Texture6 = unchecked((int)33990),
-		// GL_TEXTURE7 = 0x84C7
-		// GL_TEXTURE7_ARB = 0x84C7
-		Texture7 = unchecked((int)33991),
-		// GL_TEXTURE8 = 0x84C8
-		// GL_TEXTURE8_ARB = 0x84C8
-		Texture8 = unchecked((int)33992),
-		// GL_TEXTURE9 = 0x84C9
-		// GL_TEXTURE9_ARB = 0x84C9
-		Texture9 = unchecked((int)33993),
-		// GL_TEXTURE10 = 0x84CA
-		// GL_TEXTURE10_ARB = 0x84CA
-		Texture10 = unchecked((int)33994),
-		// GL_TEXTURE11 = 0x84CB
-		// GL_TEXTURE11_ARB = 0x84CB
-		Texture11 = unchecked((int)33995),
-		// GL_TEXTURE12 = 0x84CC
-		// GL_TEXTURE12_ARB = 0x84CC
-		Texture12 = unchecked((int)33996),
-		// GL_TEXTURE13 = 0x84CD
-		// GL_TEXTURE13_ARB = 0x84CD
-		Texture13 = unchecked((int)33997),
-		// GL_TEXTURE14 = 0x84CE
-		// GL_TEXTURE14_ARB = 0x84CE
-		Texture14 = unchecked((int)33998),
-		// GL_TEXTURE15 = 0x84CF
-		// GL_TEXTURE15_ARB = 0x84CF
-		Texture15 = unchecked((int)33999),
-		// GL_TEXTURE16 = 0x84D0
-		// GL_TEXTURE16_ARB = 0x84D0
-		Texture16 = unchecked((int)34000),
-		// GL_TEXTURE17 = 0x84D1
-		// GL_TEXTURE17_ARB = 0x84D1
-		Texture17 = unchecked((int)34001),
-		// GL_TEXTURE18 = 0x84D2
-		// GL_TEXTURE18_ARB = 0x84D2
-		Texture18 = unchecked((int)34002),
-		// GL_TEXTURE19 = 0x84D3
-		// GL_TEXTURE19_ARB = 0x84D3
-		Texture19 = unchecked((int)34003),
-		// GL_TEXTURE20 = 0x84D4
-		// GL_TEXTURE20_ARB = 0x84D4
-		Texture20 = unchecked((int)34004),
-		// GL_TEXTURE21 = 0x84D5
-		// GL_TEXTURE21_ARB = 0x84D5
-		Texture21 = unchecked((int)34005),
-		// GL_TEXTURE22 = 0x84D6
-		// GL_TEXTURE22_ARB = 0x84D6
-		Texture22 = unchecked((int)34006),
-		// GL_TEXTURE23 = 0x84D7
-		// GL_TEXTURE23_ARB = 0x84D7
-		Texture23 = unchecked((int)34007),
-		// GL_TEXTURE24 = 0x84D8
-		// GL_TEXTURE24_ARB = 0x84D8
-		Texture24 = unchecked((int)34008),
-		// GL_TEXTURE25 = 0x84D9
-		// GL_TEXTURE25_ARB = 0x84D9
-		Texture25 = unchecked((int)34009),
-		// GL_TEXTURE26 = 0x84DA
-		// GL_TEXTURE26_ARB = 0x84DA
-		Texture26 = unchecked((int)34010),
-		// GL_TEXTURE27 = 0x84DB
-		// GL_TEXTURE27_ARB = 0x84DB
-		Texture27 = unchecked((int)34011),
-		// GL_TEXTURE28 = 0x84DC
-		// GL_TEXTURE28_ARB = 0x84DC
-		Texture28 = unchecked((int)34012),
-		// GL_TEXTURE29 = 0x84DD
-		// GL_TEXTURE29_ARB = 0x84DD
-		Texture29 = unchecked((int)34013),
-		// GL_TEXTURE30 = 0x84DE
-		// GL_TEXTURE30_ARB = 0x84DE
-		Texture30 = unchecked((int)34014),
-		// GL_TEXTURE31 = 0x84DF
-		// GL_TEXTURE31_ARB = 0x84DF
-		Texture31 = unchecked((int)34015),
 	}
 	public enum VertexPointerType
 	{

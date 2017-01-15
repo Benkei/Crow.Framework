@@ -7,6 +7,15 @@ namespace OpenGl
 {
 	public partial class Gl
 	{
+		public partial class IntelConservativeRasterization
+		{
+			public enum All
+			{
+				// GL_CONSERVATIVE_RASTERIZATION_INTEL = 0x83FE
+				ConservativeRasterization = unchecked((int)33790),
+			}
+			public const string NAME_STRING = "GL_INTEL_conservative_rasterization";
+		}
 		public partial class IntelFramebufferCmaa
 		{
 			public const string NAME_STRING = "GL_INTEL_framebuffer_CMAA";

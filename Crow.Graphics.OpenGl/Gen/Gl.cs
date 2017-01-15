@@ -2694,7 +2694,7 @@ namespace OpenGl
 		public delegate void ActiveShaderProgramDelegate (System.UInt32 pipeline, System.UInt32 program);
 		// void glActiveTexture (GLenum texture)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-		public delegate void ActiveTextureDelegate (TextureUnit texture);
+		public delegate void ActiveTextureDelegate (System.UInt32 texture);
 		// void glAttachShader (GLuint program, GLuint shader)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 		public delegate void AttachShaderDelegate (System.UInt32 program, System.UInt32 shader);
@@ -4050,19 +4050,19 @@ namespace OpenGl
 		public delegate void StencilFuncDelegate (StencilFunction func, System.Int32 @ref, System.UInt32 mask);
 		// void glStencilFuncSeparate (GLenum face, GLenum func, GLint ref, GLuint mask)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-		public delegate void StencilFuncSeparateDelegate (StencilFaceDirection face, StencilFunction func, System.Int32 @ref, System.UInt32 mask);
+		public delegate void StencilFuncSeparateDelegate (System.UInt32 face, StencilFunction func, System.Int32 @ref, System.UInt32 mask);
 		// void glStencilMask (GLuint mask)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 		public delegate void StencilMaskDelegate (System.UInt32 mask);
 		// void glStencilMaskSeparate (GLenum face, GLuint mask)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-		public delegate void StencilMaskSeparateDelegate (StencilFaceDirection face, System.UInt32 mask);
+		public delegate void StencilMaskSeparateDelegate (System.UInt32 face, System.UInt32 mask);
 		// void glStencilOp (GLenum fail, GLenum zfail, GLenum zpass)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 		public delegate void StencilOpDelegate (StencilOp fail, StencilOp zfail, StencilOp zpass);
 		// void glStencilOpSeparate (GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
-		public delegate void StencilOpSeparateDelegate (StencilFaceDirection face, StencilOp sfail, StencilOp dpfail, StencilOp dppass);
+		public delegate void StencilOpSeparateDelegate (System.UInt32 face, StencilOp sfail, StencilOp dpfail, StencilOp dppass);
 		// void glTexBuffer (GLenum target, GLenum internalformat, GLuint buffer)
 		[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
 		public delegate void TexBufferDelegate (TextureTarget target, System.UInt32 internalformat, System.UInt32 buffer);
