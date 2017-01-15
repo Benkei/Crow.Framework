@@ -1,0 +1,63 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+.class public abstract sealed beforefieldinit Crow.Graphics.Class1
+{
+	.method public static int32 Square(int32 number) cil managed
+	{
+		.maxstack 2
+		ldarg.1
+		dup
+		mul
+		ret
+	}
+}
+
+.method public hidebysig static 
+	void AttachShader (
+		uint32 program,
+		uint32 shader
+	) cil managed 
+{
+	.maxstack 8
+
+	ldarg.0
+	ldarg.1
+	ldsfld native int[] OpenTK.Graphics.OpenGL.GL::EntryPoints
+	ldc.i4.s 23
+	ldelem.i
+	calli System.Void(System.UInt32,System.UInt32)
+	ret
+} // end of method GL::AttachShader
+
+.method public hidebysig static 
+	bool AreTexturesResident (
+		int32 n,
+		uint32& textures,
+		[out] bool& residences
+	) cil managed 
+{
+	.maxstack 5
+	.locals init (
+		[0] uint32& pinned,
+		[1] bool& pinned
+	)
+
+	ldarg.0
+	ldarg.1
+	stloc.0
+	ldloc.0
+	conv.i
+	ldarg.2
+	stloc.1
+	ldloc.1
+	conv.i
+	ldsfld native int[] OpenTK.Graphics.OpenGL.GL::EntryPoints
+	ldc.i4.s 16
+	ldelem.i
+	calli System.Boolean(System.Int32,System.UInt32*,System.Boolean*)
+	ret
+} // end of method GL::AreTexturesResident

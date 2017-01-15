@@ -1,0 +1,239 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SharpSpecGen" #>
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Security;
+
+namespace <#= FileNamespace #>
+{
+<#
+	if (Class != null)
+	{
+		Class.Sort ( (a, b) => a.Name.CompareTo(b.Name) );
+		foreach (var item in Class)
+		{
+			WriteClass(item);
+		}
+	}
+	if (Enums != null)
+	{
+		Enums.Sort ( (a, b) => a.Name.CompareTo(b.Name) );
+		foreach (var _enum in Enums)
+		{
+			WriteEnum(_enum );
+		}
+	}
+#>
+}
+
+<#+
+protected void WriteClass(ClassInfo classInfo)
+{
+	Begin(classInfo.Accessor, classInfo.Type, classInfo.Name);
+	
+	classInfo.Enums.Sort ( (a, b) => a.Name.CompareTo(b.Name) );
+	classInfo.Commands.Sort (
+		(a, b) => (a.Method.Name + a.Command.Prototype.Declaration.Name)
+		.CompareTo ( b.Method.Name + b.Command.Prototype.Declaration.Name )
+	);
+
+	foreach (var _enum in classInfo.Enums)
+	{
+		WriteEnum(_enum );
+	}
+
+	this.PushIndent("	");
+
+	if ( classInfo.Group != null && classInfo.Group.SpecGroup.isExtension )
+	{
+#>
+public const string NAME_STRING = "<#= classInfo.Group.SpecGroup.Name #>";
+<#+
+	}
+
+	if(classInfo.Commands.Count > 0)
+	{
+#>
+#region command delegates
+<#+
+		foreach (var cmd in classInfo.Commands)
+		{
+			WriteCommandDelegate(cmd);
+		}
+#>
+#endregion // command delegates
+#region commands
+<#+
+
+		foreach (var cmd in classInfo.Commands)
+		{
+			WriteCommand(cmd);
+		}
+#>
+#endregion // commands
+<#+
+#>
+public <#= classInfo.Name #> (IHandleResolver resolver)
+{
+	if (resolver == null) throw new ArgumentNullException ("resolver");
+<#+
+		this.PushIndent("	");
+		foreach (var cmd in classInfo.Commands)
+		{
+			WriteLoadCommandDelegate(cmd);
+		}
+		this.PopIndent();
+#>
+}
+<#+
+	}
+
+	this.PopIndent();
+
+	if (classInfo.SubClasses != null)
+	{
+		classInfo.SubClasses.Sort ( (a, b) => a.Name.CompareTo ( b.Name ) );
+		foreach (var cls in classInfo.SubClasses)
+		{
+			WriteClass(cls);
+		}
+	}
+
+	End();
+}
+protected void WriteEnum(EnumClassInfo info)
+{
+	Begin(info.Accessor, info.Type, info.Name);
+	
+	this.PushIndent("	");
+	foreach (var cmd in info.Values.Values.OrderBy( (a)=>a.Value.Value ))
+	{
+		WriteEnumElement(cmd);
+	}
+	this.PopIndent();
+
+	End();
+}
+#>
+
+
+<#+
+/*
+	/// <summary>
+	/// 
+	/// </summary>
+	[Flags]
+	public enum MyEnum : int
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		Muh = 0,
+	}
+*/
+
+protected void WriteEnumElement(EnumElementInfo info)
+{
+#>
+// <#= info.Value.Name #> = 0x<#= info.Value.Value.ToString("X") #>
+<#+
+	if (info.Alias != null)
+	{
+		foreach(var item in info.Alias)
+		{
+#>
+// <#= item.Name #> = 0x<#= item.Value.ToString("X") #>
+<#+
+		}
+	}
+#>
+<#= info.Name #> = unchecked((int)<#= info.Value.Value #>),
+<#+
+}
+#>
+
+
+<#+
+/*
+	/// <summary>
+	/// 
+	/// </summary>
+	public class ClassName
+	{
+	}
+*/
+
+protected void Begin(string accessor, string type, string name, string interfaces = null)
+{
+	this.PushIndent("	");
+#>
+<#= accessor #> <#= type #> <#= name #><#= (interfaces == null ? string.Empty : (" : " + interfaces)) #>
+{
+<#+
+}
+protected void End()
+{
+#>
+}
+<#+
+	this.PopIndent();
+}
+#>
+
+
+
+<#+
+/*
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="other"></param>
+	/// <returns></returns>
+	[DllImport("opengl32")]
+	public static extern void glVertex2d(double x, double y);
+*/
+protected void WriteCommand(CommandInfo info)
+{
+#>
+<#= "// " + CommandToString( info.Command ) #>
+public readonly <#= info.Method.Name #>Delegate <#= info.Method.Name #>;
+<#+
+}
+#>
+
+
+<#+
+/*
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="other"></param>
+	/// <returns></returns>
+	[SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+	public delegate void MyUnmanagedDelegate(float a, float b, float* result);
+*/
+protected void WriteCommandDelegate(CommandInfo info)
+{
+	var parameter = string.Join ( ", ", (from item in info.Parameters select (item.Type + " " + item.Name)) );
+#>
+<#= "// " + CommandToString( info.Command ) #>
+[SuppressUnmanagedCodeSecurity/*, UnmanagedFunctionPointer(CallingConvention.Cdecl)*/]
+public delegate <#= info.Method.Type #> <#= info.Method.Name #>Delegate (<#= parameter #>);
+<#+
+}
+#>
+
+
+<#+
+protected void WriteLoadCommandDelegate(CommandInfo info)
+{
+#>
+resolver.LoadHandle ("<#= info.Command.Prototype.Declaration.Name #>", out <#= info.Method.Name #>);
+<#+
+}
+#>
