@@ -203,4 +203,7 @@
   <Map field="logicOpEnable"
        map-name="logicOperationEnable"/>
 
+  <!--<Map field="VkDebugMarkerMarkerInfoEXT::color"
+       map-type="Color4"/>-->
+
 </Mappings>
