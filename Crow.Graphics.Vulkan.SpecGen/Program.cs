@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Linq;
-using System.IO;
 using System.Xml.XPath;
 
 namespace Crow.Vulkan.SpecGen
@@ -511,14 +511,14 @@ namespace Crow.Vulkan.SpecGen
 
 			if ( typeNode != null )
 			{
-				mapType.NestedType = GetSpecType ( typeNode.Value );
+				mapType.ParentType = GetSpecType ( typeNode.Value );
 			}
 			if ( category == Category.Bitmask )
 			{
 				var requires = node.GetAttribute ( "requires" );
 				if ( requires != null )
 				{
-					mapType.NestedType = GetSpecType ( requires );
+					mapType.ParentType = GetSpecType ( requires );
 				}
 			}
 		}
@@ -714,7 +714,7 @@ namespace Crow.Vulkan.SpecGen
 		public string Interfaces;
 
 		public List<ClassTemplate> NestedClass = new List<ClassTemplate> ();
-		public List<Object> Objects = new List<object> ();
+		public List<object> Objects = new List<object> ();
 
 		public ClassTemplate()
 		{
@@ -730,7 +730,7 @@ namespace Crow.Vulkan.SpecGen
 
 	public class SpecType
 	{
-		public SpecType NestedType;
+		public SpecType ParentType;
 		public object TypeObject;
 		public string Name;
 		public bool IsPointer;
@@ -751,7 +751,7 @@ namespace Crow.Vulkan.SpecGen
 			SpecType type = this;
 			do
 			{
-				type = type.NestedType;
+				type = type.ParentType;
 				if ( type != null )
 				{
 					yield return type;
@@ -780,7 +780,7 @@ namespace Crow.Vulkan.SpecGen
 				{
 					return ((SpecDelegate)type.TypeObject).MapName;
 				}
-				type = type.NestedType;
+				type = type.ParentType;
 				i++;
 				if ( i >= 10 )
 					throw new Exception ( "Infinit type loop? " + Name );
