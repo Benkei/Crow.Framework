@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Crow.Graphics.Vulkan
 {
@@ -37,7 +33,7 @@ namespace Crow.Graphics.Vulkan
 				result = null;
 				return;
 			}
-			result = Marshal.GetDelegateForFunctionPointer<TDelegate> ( proc );
+			result = (TDelegate)(object)Marshal.GetDelegateForFunctionPointer ( proc, typeof ( TDelegate ) );
 		}
 	}
 }

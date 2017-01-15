@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Crow.Graphics.Vulkan
 {
@@ -24,7 +20,8 @@ namespace Crow.Graphics.Vulkan
 			Device = device;
 		}
 
-		public unsafe void LoadHandle<TDelegate>(IntPtr functionName, out TDelegate result) where TDelegate : class
+		public unsafe void LoadHandle<TDelegate>(IntPtr functionName, out TDelegate result)
+			where TDelegate : class
 		{
 			if ( Device.IsZero )
 				throw new InvalidOperationException ( "Instance pointer not defined!" );
@@ -36,7 +33,7 @@ namespace Crow.Graphics.Vulkan
 				result = null;
 				return;
 			}
-			result = Marshal.GetDelegateForFunctionPointer<TDelegate> ( proc );
+			result = (TDelegate)(object)Marshal.GetDelegateForFunctionPointer ( proc, typeof ( TDelegate ) );
 		}
 	}
 }

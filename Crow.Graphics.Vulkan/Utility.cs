@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Crow.Graphics.Vulkan
 {
@@ -20,6 +17,7 @@ namespace Crow.Graphics.Vulkan
 			return (IntPtr)ptr;
 		}
 
+		/*
 		public static IntPtr AllocateArray<T>(T values)
 			where T : struct
 		{
@@ -38,6 +36,7 @@ namespace Crow.Graphics.Vulkan
 			}
 			return ptr;
 		}
+		*/
 
 		public unsafe static void FreeString(IntPtr values, int length)
 		{
@@ -91,7 +90,7 @@ namespace Crow.Graphics.Vulkan
 			where TReturn : struct
 		{
 			var funPtr = Marshal.GetFunctionPointerForDelegate ( enumerator );
-			var func = Marshal.GetDelegateForFunctionPointer<Function0> ( funPtr );
+			var func = (Function0)(object)Marshal.GetDelegateForFunctionPointer ( funPtr, typeof ( Function0 ) );
 
 			uint count = 0;
 			func ( (IntPtr)(&count), IntPtr.Zero ).CheckError ();
@@ -116,7 +115,7 @@ namespace Crow.Graphics.Vulkan
 			where TReturn : struct
 		{
 			var funPtr = Marshal.GetFunctionPointerForDelegate ( enumerator );
-			var func = Marshal.GetDelegateForFunctionPointer<Function1> ( funPtr );
+			var func = (Function1)(object)Marshal.GetDelegateForFunctionPointer ( funPtr, typeof ( Function1 ) );
 
 			uint count = 0;
 			func ( arg1, (IntPtr)(&count), IntPtr.Zero ).CheckError ();
@@ -141,7 +140,7 @@ namespace Crow.Graphics.Vulkan
 			where TReturn : struct
 		{
 			var funPtr = Marshal.GetFunctionPointerForDelegate ( enumerator );
-			var func = Marshal.GetDelegateForFunctionPointer<Function2> ( funPtr );
+			var func = (Function2)(object)Marshal.GetDelegateForFunctionPointer ( funPtr, typeof ( Function2 ) );
 
 			uint count = 0;
 			func ( arg1, arg2, (IntPtr)(&count), IntPtr.Zero ).CheckError ();
@@ -166,7 +165,7 @@ namespace Crow.Graphics.Vulkan
 			where TReturn : struct
 		{
 			var funPtr = Marshal.GetFunctionPointerForDelegate ( enumerator );
-			var func = Marshal.GetDelegateForFunctionPointer<Function3> ( funPtr );
+			var func = (Function3)(object)Marshal.GetDelegateForFunctionPointer ( funPtr, typeof ( Function3 ) );
 
 			uint count = 0;
 			func ( arg1, (IntPtr)(&count), IntPtr.Zero ).CheckError ();
@@ -191,7 +190,7 @@ namespace Crow.Graphics.Vulkan
 			where TReturn : struct
 		{
 			var funPtr = Marshal.GetFunctionPointerForDelegate ( enumerator );
-			var func = Marshal.GetDelegateForFunctionPointer<Function4> ( funPtr );
+			var func = (Function4)(object)Marshal.GetDelegateForFunctionPointer ( funPtr, typeof ( Function4 ) );
 
 			uint count = 0;
 			func ( arg1, arg2, (IntPtr)(&count), IntPtr.Zero ).CheckError ();
